@@ -1,5 +1,8 @@
 .navbar {
+    z-index: 999;
+    position: fixed;
     background: var(--bg-nav);
+    box-shadow: 0 5px 20px -10px rgba(0, 0, 0, 0.75);
 
     display: flex;
     align-items: center;
@@ -7,21 +10,21 @@
 
     width: 100%;
     height: 70px;
-}
 
-.navbar-brand {
-    font-size: 20px;
-    padding: 0 2em;
-}
-
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    height: 100%;
-
-    a {
+    .navbar-brand {
+        font-size: 20px;
         padding: 0 2em;
+    }
+
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        height: 100%;
+
+        a {
+            padding: 0 2em;
+        }
     }
 }

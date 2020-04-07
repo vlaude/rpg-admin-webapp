@@ -7,7 +7,10 @@ body {
 }
 
 main {
-    padding: 2rem;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: calc(100% - 300px);
 }
 
 ul {
@@ -26,6 +29,7 @@ a {
 .dark {
     --bg: var(--yankees-blue5);
     --bg-nav: var(--yankees-blue6);
+    --nav-item-hover: var(--yankees-blue5);
     --color: var(--yankees-blue0);
 }
 

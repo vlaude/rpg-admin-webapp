@@ -1,0 +1,27 @@
+.sidebar {
+    background: var(--bg-nav);
+
+    position: absolute;
+    top: 70px;
+    left: 0;
+
+    width: 300px;
+    height: calc(100vh - 70px);
+
+    .nav-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        height: 75px;
+        padding-left: 20px;
+
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    .nav-item:hover {
+        background: var(--nav-item-hover);
+        padding-left: 30px;
+        font-size: 18px;
+    }
+}
