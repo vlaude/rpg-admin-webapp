@@ -1,0 +1,63 @@
+.card {
+    min-height: 250px;
+    max-height: 250px;
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .attribute-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--yankees-blue2);
+            border-radius: 50px;
+            width: 1.5em;
+            height: 1.5em;
+        }
+        .attribute-type {
+            border: 1px solid var(--yankees-blue2);
+            border-radius: 50px;
+            width: 1.5em;
+            height: 1.5em;
+            background: var(--attribute-color);
+        }
+        .vitality-source {
+            background: var(--vitality-source-color);
+        }
+        .power-source {
+            background: var(--power-source-color);
+        }
+    }
+    .card-content {
+        .description {
+            padding: 0 1.3em 1em 1.3em;
+        }
+        .alterations-container {
+        }
+        .alteration {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            padding: 0.3em 0;
+            border-top: 2px solid var(--card-divider-color);
+            width: 100%;
+            .alteration-symbol-bonus,
+            .alteration-symbol-malus {
+                padding: 0 0.6em;
+                font-size: 1.5rem;
+            }
+            .alteration-symbol-bonus {
+                color: var(--alteration-bonus-color);
+            }
+            .alteration-symbol-malus {
+                color: var(--alteration-malus-color);
+            }
+        }
+        .alteration:last-child {
+            border-bottom: 2px solid var(--card-divider-color);
+        }
+    }
+}

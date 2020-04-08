@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header">
+        <div class="attribute-icon">?</div>
+        <div class="card-title">{{ attribute.name }}</div>
+        <div
+            class="attribute-type"
+            [ngClass]="{ 'vitality-source': attribute.isVitalitySource, 'power-source': attribute.isPowerSource }"
+        ></div>
+    </div>
+    <div class="card-content">
+        <div class="description">
+            {{ attribute.description || 'No description yet.' }}
+        </div>
+        <div class="alterations-container">
+            <div class="alteration" *ngFor="let alteration of attribute.alterations">
+                <span class="alteration-symbol-bonus" *ngIf="alteration.value > 0">+</span>
+                <span class="alteration-symbol-malus" *ngIf="alteration.value < 0">-</span>
+                {{ alteration.value < 0 ? alteration.value * -1 : alteration.value }} {{ alteration.type }}
+                {{ alteration.property }}
+            </div>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>

@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     background: var(--bg);
     color: var(--color);
@@ -24,13 +25,40 @@ a {
     text-decoration: none;
 }
 
+/* Card */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card-background);
+    border-radius: 5px;
+
+    .card-header {
+        padding: 1em 1.3em;
+        .card-title {
+            font-size: 1.1rem;
+        }
+    }
+    .card-content {
+        padding: 1em 0;
+        width: 100%;
+
+        color: var(--color-light);
+    }
+}
+
 /* Themes */
 
 .dark {
-    --bg: var(--yankees-blue5);
-    --bg-nav: var(--yankees-blue6);
-    --nav-item-hover: var(--yankees-blue5);
+    --bg: var(--yankees-blue6);
+    --bg-nav: var(--yankees-blue5);
+    --nav-item-hover: var(--yankees-blue6);
+
     --color: var(--yankees-blue0);
+    --color-light: var(--yankees-blue1);
+
+    --card-background: var(--yankees-blue5);
+    --card-divider-color: var(--yankees-blue6);
 }
 
 :root {
@@ -41,4 +69,11 @@ a {
     --yankees-blue4: #3d4f60;
     --yankees-blue5: #13293d;
     --yankees-blue6: #102232;
+
+    --attribute-color: #a57548;
+    --vitality-source-color: #db5461;
+    --power-source-color: #72ddf7;
+
+    --alteration-bonus-color: #16db93;
+    --alteration-malus-color: #f24236;
 }
