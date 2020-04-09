@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AttributesContainerComponent } from './attributes/containers/attributes-container/attributes-container.component';
+import { DamageTypesContainerComponent } from './damage-types/containers/damage-types-container/damage-types-container.component';
 
 const routes: Routes = [
     {
@@ -11,6 +12,10 @@ const routes: Routes = [
     {
         path: 'attributes',
         component: AttributesContainerComponent,
+    },
+    {
+        path: 'damage-types',
+        component: DamageTypesContainerComponent,
     },
     {
         path: '**',

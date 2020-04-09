@@ -40,11 +40,84 @@ a {
         }
     }
     .card-content {
-        padding: 1em 0;
         width: 100%;
-
         color: var(--color-light);
     }
+}
+
+/* Icon */
+
+div.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--yankees-blue2);
+    border-radius: 50px;
+    width: 1.5em;
+    height: 1.5em;
+}
+div.icon.lg {
+    width: 2em;
+    height: 2em;
+}
+div.icon.sm {
+    width: 1em;
+    height: 1em;
+}
+
+/* Alteration symbols */
+
+span.alteration-symbol-bonus {
+    color: var(--alteration-bonus-color);
+}
+span.alteration-symbol-malus {
+    color: var(--alteration-malus-color);
+}
+span.alteration-symbol-bonus,
+span.alteration-symbol-malus {
+    font-size: 1.5rem;
+    padding: 0 0.3em;
+}
+span.alteration-symbol-bonus:before {
+    content: '+';
+}
+span.alteration-symbol-malus:before {
+    content: '-';
+}
+span.alteration-symbol-bonus.lg,
+span.alteration-symbol-malus.lg {
+    font-size: 2em;
+}
+span.alteration-symbol-bonus.sm,
+span.alteration-symbol-malus.sm {
+    font-size: 1em;
+}
+
+/* Attribute chip */
+
+div.attribute-chip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--yankees-blue2);
+    background: var(--attribute-color);
+    border-radius: 50px;
+    width: 1.5em;
+    height: 1.5em;
+}
+div.attribute-chip.lg {
+    width: 2em;
+    height: 2em;
+}
+div.attribute-chip.sm {
+    width: 1.2em;
+    height: 1.2em;
+}
+div.attribute-chip.vitality-source {
+    background: var(--vitality-source-color);
+}
+div.attribute-chip.power-source {
+    background: var(--power-source-color);
 }
 
 /* Themes */

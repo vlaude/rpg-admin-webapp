@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-header">
+        <div class="icon lg">?</div>
+        <div class="card-title">{{ damageType.name }}</div>
+    </div>
+    <div class="card-content">
+        <div class="affects-container">
+            <div class="title">Affects</div>
+            <div class="affect" *ngFor="let attribute of damageType.attributesAffected">
+                <div
+                    class="attribute-chip sm"
+                    [ngClass]="{
+                        'vitality-source': attribute.isVitalitySource,
+                        'power-source': attribute.isPowerSource
+                    }"
+                ></div>
+                {{ attribute.name }}
+            </div>
+        </div>
+        <div class="altered-by-container">
+            <div class="title">Altered by</div>
+            <div class="alteration" *ngFor="let alteration of damageType.alterations">
+                <div
+                    class="attribute-chip sm"
+                    [ngClass]="{
+                        'vitality-source': alteration.attribute.isVitalitySource,
+                        'power-source': alteration.attribute.isPowerSource
+                    }"
+                ></div>
+                {{ alteration.attribute.name }}
+                <span
+                    [ngClass]="{
+                        'alteration-symbol-bonus': alteration.value > 0,
+                        'alteration-symbol-malus': alteration.value < 0
+                    }"
+                ></span>
+                <span style="font-size: 1rem;">{{
+                    alteration.value > 0 ? alteration.value : alteration.value * -1
+                }}</span>
+            </div>
+        </div>
+    </div>
+</div>

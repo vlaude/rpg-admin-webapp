@@ -15,6 +15,7 @@ export class AttributeDataService {
             description: '',
             alterations: [
                 {
+                    id: '1',
                     type: 'DamageType',
                     value: 5,
                     property: 'Physical',
@@ -52,8 +53,9 @@ export class AttributeDataService {
             name: 'Faith',
             description: '',
             alterations: [
-                { type: 'DamageType', value: 4, property: 'Magical' },
+                { id: '2', type: 'DamageType', value: 4, property: 'Magical' },
                 {
+                    id: '3',
                     type: 'PowerSource',
                     value: 10,
                     property: 'Chakra',
@@ -67,12 +69,8 @@ export class AttributeDataService {
             name: 'Curse',
             description: '',
             alterations: [
-                { type: 'DamageType', value: -5, property: 'Physical' },
-                {
-                    type: 'PowerSource',
-                    value: -20,
-                    property: 'Chakra',
-                },
+                { id: '4', type: 'DamageType', value: -5, property: 'Physical' },
+                { id: '5', type: 'PowerSource', value: -20, property: 'Chakra' },
             ],
             isPowerSource: false,
             isVitalitySource: false,
@@ -82,9 +80,9 @@ export class AttributeDataService {
             name: 'Dexterity',
             description: '',
             alterations: [
-                { type: 'DamageType', value: 5, property: 'Physical' },
-                { type: 'DamageType', value: 5, property: 'Nature' },
-                { type: 'Ability', value: 3, property: 'Dodge' },
+                { id: '6', type: 'DamageType', value: 5, property: 'Physical' },
+                { id: '7', type: 'DamageType', value: 5, property: 'Nature' },
+                { id: '8', type: 'Ability', value: 3, property: 'Dodge' },
                 // { type: 'Ability', value: 10, property: 'Speed' },
             ],
             isPowerSource: false,

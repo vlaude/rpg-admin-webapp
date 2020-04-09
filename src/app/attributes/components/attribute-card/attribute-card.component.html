@@ -1,9 +1,9 @@
 <div class="card">
     <div class="card-header">
-        <div class="attribute-icon">?</div>
+        <div class="icon lg">?</div>
         <div class="card-title">{{ attribute.name }}</div>
         <div
-            class="attribute-type"
+            class="attribute-chip lg"
             [ngClass]="{ 'vitality-source': attribute.isVitalitySource, 'power-source': attribute.isPowerSource }"
         ></div>
     </div>
@@ -13,10 +13,17 @@
         </div>
         <div class="alterations-container">
             <div class="alteration" *ngFor="let alteration of attribute.alterations">
-                <span class="alteration-symbol-bonus" *ngIf="alteration.value > 0">+</span>
-                <span class="alteration-symbol-malus" *ngIf="alteration.value < 0">-</span>
-                {{ alteration.value < 0 ? alteration.value * -1 : alteration.value }} {{ alteration.type }}
-                {{ alteration.property }}
+                <span
+                    [ngClass]="{
+                        'alteration-symbol-bonus': alteration.value > 0,
+                        'alteration-symbol-malus': alteration.value < 0
+                    }"
+                ></span>
+                <span style="font-size: 1rem;">{{
+                    alteration.value < 0 ? alteration.value * -1 : alteration.value
+                }}</span>
+                <span style="margin-left: 0.5em;">{{ alteration.type }}</span>
+                <b style="margin-left: 0.5em;">{{ alteration.property }}</b>
             </div>
         </div>
     </div>
