@@ -1,0 +1,66 @@
+.equipment-category-row {
+    font-size: 1rem;
+    transition: all 0.25s ease-in-out;
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0.5em 1em 0.5em 0.5em;
+        border-bottom: 2px solid var(--yankees-blue6);
+
+        .category-name,
+        .category-position {
+            display: flex;
+            align-items: center;
+        }
+    }
+    .content.leaf {
+        .category-name {
+            font-weight: bold;
+        }
+        color: var(--yankees-blue1);
+    }
+    .content:not(.leaf) {
+        .category-name {
+            margin-left: -1em;
+        }
+    }
+    /* Collapse */
+    .content.collapsible {
+        cursor: pointer;
+    }
+    .content.collapsible {
+        /* Add the collapse cursor */
+        .category-name::before {
+            content: ' ';
+            display: inline-block;
+
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid currentColor;
+            vertical-align: middle;
+            margin-right: 0.7rem;
+            transform: translateY(-2px);
+
+            transition: transform 0.2s ease-out;
+        }
+    }
+    .content.collapsible.collapsed {
+        .category-name::before {
+            transform: rotate(90deg) translateX(-3px);
+        }
+    }
+    .content.collapsible:hover {
+        background: var(--yankees-blue6);
+    }
+    /* Collapsing using max-height */
+    .sub-categories {
+        transition: max-height 0.5s;
+        max-height: 100vh;
+    }
+    .sub-categories--hidden {
+        max-height: 0;
+        overflow: hidden;
+    }
+}

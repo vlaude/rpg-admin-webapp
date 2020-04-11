@@ -1,0 +1,36 @@
+<div class="equipment-category-row">
+    <div
+        class="content"
+        [ngStyle]="{ 'padding-left.em': upCategoriesCount * 3 + 2 }"
+        [ngClass]="{
+            collapsible: !isLeafCategory,
+            collapsed: !showSubCategories,
+            leaf: isLeafCategory
+        }"
+        (click)="showSubCategories = !showSubCategories"
+    >
+        <div class="category-name">
+            <div class="icon" style="margin-right: 0.5em;">?</div>
+            {{ equipmentCategory.name }}
+            <span style="margin-left: 0.5em;" *ngIf="equipmentCategory.subCategories?.length > 0"
+                >( {{ equipmentCategory.subCategories.length }} )</span
+            >
+        </div>
+        <div class="category-position">
+            <span>{{ equipmentCategory.position?.name }}</span>
+            <div *ngIf="equipmentCategory.position" class="icon" style="margin-left: 0.5em;">?</div>
+        </div>
+    </div>
+    <!-- Sub Categories -->
+    <div
+        *ngIf="equipmentCategory.subCategories"
+        class="sub-categories"
+        [ngClass]="{ 'sub-categories--hidden': !showSubCategories }"
+    >
+        <app-equipment-category-row
+            *ngFor="let subCategory of equipmentCategory.subCategories"
+            [equipmentCategory]="subCategory"
+            [upCategoriesCount]="upCategoriesCount + 1"
+        ></app-equipment-category-row>
+    </div>
+</div>

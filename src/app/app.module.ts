@@ -8,6 +8,9 @@ import { AttributesContainerComponent } from './attributes/containers/attributes
 import { AttributeCardComponent } from './attributes/components/attribute-card/attribute-card.component';
 import { DamageTypesContainerComponent } from './damage-types/containers/damage-types-container/damage-types-container.component';
 import { DamageTypeCardComponent } from './damage-types/components/damage-type-card/damage-type-card.component';
+import { EquipmentCategoriesContainerComponent } from './equipment-categories/containers/equipment-categories-container/equipment-categories-container.component';
+import { EquipmentCategoryCardComponent } from './equipment-categories/components/equipment-category-card/equipment-category-card.component';
+import { EquipmentCategoryRowComponent } from './equipment-categories/components/equipment-category-row/equipment-category-row.component';
 
 @NgModule({
     declarations: [
@@ -16,6 +19,9 @@ import { DamageTypeCardComponent } from './damage-types/components/damage-type-c
         AttributeCardComponent,
         DamageTypesContainerComponent,
         DamageTypeCardComponent,
+        EquipmentCategoriesContainerComponent,
+        EquipmentCategoryCardComponent,
+        EquipmentCategoryRowComponent,
     ],
 
     imports: [BrowserModule, AppRoutingModule, CoreModule],
