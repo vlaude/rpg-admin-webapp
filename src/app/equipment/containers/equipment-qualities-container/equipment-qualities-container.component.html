@@ -1,0 +1,11 @@
+<div class="equipment-qualities-grid">
+    <div class="equipment-qualities-cards">
+        <app-equipment-quality-card
+            *ngFor="let equipmentQuality of equipmentQualities"
+            [equipmentQuality]="equipmentQuality"
+            [active]="equipmentQualityCardActive === equipmentQuality.id"
+            (clicked)="handleEquipmentQualityCardClicked($event)"
+        ></app-equipment-quality-card>
+    </div>
+    <app-equipment-quality-graph [equipmentQuality]="activeEquipmentQuality"></app-equipment-quality-graph>
+</div>

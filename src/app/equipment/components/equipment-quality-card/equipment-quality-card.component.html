@@ -1,0 +1,4 @@
+<div class="card" (click)="fireClicked()" [ngClass]="{ active: active }">
+    <div class="quality-chip" [ngStyle]="{ background: equipmentQuality.color }"></div>
+    <span>{{ equipmentQuality.name }}</span>
+</div>

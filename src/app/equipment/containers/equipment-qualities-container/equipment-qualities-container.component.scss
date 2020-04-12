@@ -1,0 +1,16 @@
+.equipment-qualities-grid {
+    height: calc(100vh - 70px - 4rem);
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+
+    .equipment-qualities-cards {
+        display: flex;
+        margin-bottom: 2em;
+    }
+
+    app-equipment-quality-graph {
+        flex-grow: 2;
+    }
+}

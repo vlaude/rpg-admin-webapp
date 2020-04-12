@@ -13,6 +13,9 @@ import { EquipmentCategoryCardComponent } from './equipment/components/equipment
 import { EquipmentCategoryRowComponent } from './equipment/components/equipment-category-row/equipment-category-row.component';
 import { EquipmentPositionsContainerComponent } from './equipment/containers/equipment-positions-container/equipment-positions-container.component';
 import { EquipmentPositionCardComponent } from './equipment/components/equipment-position-card/equipment-position-card.component';
+import { EquipmentQualitiesContainerComponent } from './equipment/containers/equipment-qualities-container/equipment-qualities-container.component';
+import { EquipmentQualityCardComponent } from './equipment/components/equipment-quality-card/equipment-quality-card.component';
+import { EquipmentQualityGraphComponent } from './equipment/components/equipment-quality-graph/equipment-quality-graph.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +29,9 @@ import { EquipmentPositionCardComponent } from './equipment/components/equipment
         EquipmentCategoryRowComponent,
         EquipmentPositionsContainerComponent,
         EquipmentPositionCardComponent,
+        EquipmentQualitiesContainerComponent,
+        EquipmentQualityCardComponent,
+        EquipmentQualityGraphComponent,
     ],
 
     imports: [BrowserModule, AppRoutingModule, CoreModule],

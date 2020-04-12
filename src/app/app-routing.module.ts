@@ -6,6 +6,8 @@ import { DamageTypesContainerComponent } from './damage-types/containers/damage-
 import { EquipmentCategoriesContainerComponent } from './equipment/containers/equipment-categories-container/equipment-categories-container.component';
 // tslint:disable-next-line:max-line-length
 import { EquipmentPositionsContainerComponent } from './equipment/containers/equipment-positions-container/equipment-positions-container.component';
+// tslint:disable-next-line:max-line-length
+import { EquipmentQualitiesContainerComponent } from './equipment/containers/equipment-qualities-container/equipment-qualities-container.component';
 
 const routes: Routes = [
     {
@@ -24,6 +26,10 @@ const routes: Routes = [
     {
         path: 'equipment-positions',
         component: EquipmentPositionsContainerComponent,
+    },
+    {
+        path: 'equipment-qualities',
+        component: EquipmentQualitiesContainerComponent,
     },
     {
         path: 'equipment-categories',

@@ -1,0 +1,7 @@
+<div class="card graph-container">
+    Graph with some cool informations about
+    <span *ngIf="!equipmentQuality" style="font-weight: bold;">all equipments qualities.</span>
+    <span *ngIf="equipmentQuality" style="font-weight: bold;" [ngStyle]="{ color: equipmentQuality.color }"
+        >{{ equipmentQuality.name }}.</span
+    >
+</div>

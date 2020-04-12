@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { EquipmentCategoryModel } from '../models/equipment-category.model';
 import { EquipmentPositionModel } from '../models/equipment-position.model';
+import { EquipmentQualityModel } from '../models/equipment-quality.model';
 
 @Injectable({
     providedIn: 'root',
@@ -71,6 +72,35 @@ export class EquipmentDataService {
         {
             id: '11',
             name: 'Extra 2',
+        },
+    ];
+
+    // tslint:disable-next-line:variable-name
+    private readonly _equipmentQualities: EquipmentQualityModel[] = [
+        {
+            id: '1',
+            name: 'Classic',
+            color: '#D1D1D1',
+        },
+        {
+            id: '2',
+            name: 'Not Bad',
+            color: '#B5EF8A',
+        },
+        {
+            id: '3',
+            name: 'Rare',
+            color: '#5DA9E9',
+        },
+        {
+            id: '4',
+            name: 'Epic',
+            color: '#8C1A6A',
+        },
+        {
+            id: '5',
+            name: 'Legendary',
+            color: '#DB7C26',
         },
     ];
 
@@ -216,6 +246,10 @@ export class EquipmentDataService {
 
     get equipmentPositions(): EquipmentPositionModel[] {
         return this._equipmentPositions;
+    }
+
+    get equipmentQualities(): EquipmentQualityModel[] {
+        return this._equipmentQualities;
     }
 
     get equipmentCategories(): EquipmentCategoryModel[] {

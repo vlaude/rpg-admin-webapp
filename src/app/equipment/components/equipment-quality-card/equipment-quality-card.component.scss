@@ -1,0 +1,24 @@
+.card {
+    font-size: 1rem;
+    padding: 1em 1.5em;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 1.5em;
+
+    cursor: pointer;
+    .quality-chip {
+        width: 2em;
+        height: 2em;
+        border: 1px solid var(--yankees-blue6);
+        border-radius: 25px;
+        margin-right: 0.5em;
+    }
+    &.active {
+        border: 1px solid var(--yankees-blue1);
+    }
+    &:hover {
+        background: var(--yankees-blue6);
+    }
+}
