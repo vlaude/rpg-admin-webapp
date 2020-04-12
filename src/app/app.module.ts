@@ -8,9 +8,11 @@ import { AttributesContainerComponent } from './attributes/containers/attributes
 import { AttributeCardComponent } from './attributes/components/attribute-card/attribute-card.component';
 import { DamageTypesContainerComponent } from './damage-types/containers/damage-types-container/damage-types-container.component';
 import { DamageTypeCardComponent } from './damage-types/components/damage-type-card/damage-type-card.component';
-import { EquipmentCategoriesContainerComponent } from './equipment-categories/containers/equipment-categories-container/equipment-categories-container.component';
-import { EquipmentCategoryCardComponent } from './equipment-categories/components/equipment-category-card/equipment-category-card.component';
-import { EquipmentCategoryRowComponent } from './equipment-categories/components/equipment-category-row/equipment-category-row.component';
+import { EquipmentCategoriesContainerComponent } from './equipment/containers/equipment-categories-container/equipment-categories-container.component';
+import { EquipmentCategoryCardComponent } from './equipment/components/equipment-category-card/equipment-category-card.component';
+import { EquipmentCategoryRowComponent } from './equipment/components/equipment-category-row/equipment-category-row.component';
+import { EquipmentPositionsContainerComponent } from './equipment/containers/equipment-positions-container/equipment-positions-container.component';
+import { EquipmentPositionCardComponent } from './equipment/components/equipment-position-card/equipment-position-card.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +24,8 @@ import { EquipmentCategoryRowComponent } from './equipment-categories/components
         EquipmentCategoriesContainerComponent,
         EquipmentCategoryCardComponent,
         EquipmentCategoryRowComponent,
+        EquipmentPositionsContainerComponent,
+        EquipmentPositionCardComponent,
     ],
 
     imports: [BrowserModule, AppRoutingModule, CoreModule],

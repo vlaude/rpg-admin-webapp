@@ -1,11 +1,78 @@
 import { Injectable } from '@angular/core';
 import { EquipmentCategoryModel } from '../models/equipment-category.model';
+import { EquipmentPositionModel } from '../models/equipment-position.model';
 
 @Injectable({
     providedIn: 'root',
 })
-export class EquipmentCategoryDataService {
+export class EquipmentDataService {
     constructor() {}
+
+    // tslint:disable-next-line:variable-name
+    private readonly _equipmentPositions: EquipmentPositionModel[] = [
+        {
+            id: '1',
+            name: 'Head',
+            equipmentCategories: [{ name: 'Helmet' }, { name: ' Hood' }],
+        },
+        {
+            id: '2',
+            name: 'Chest',
+            equipmentCategories: [
+                { name: 'Holy chestplate' },
+                { name: 'Cursed chestplate' },
+                { name: 'Dress' },
+                { name: 'Marcel' },
+            ],
+        },
+        {
+            id: '3',
+            name: 'Shoulders',
+        },
+        {
+            id: '4',
+            name: 'Legs',
+        },
+        {
+            id: '5',
+            name: 'Hands',
+        },
+        {
+            id: '6',
+            name: 'Hand Right',
+            equipmentCategories: [
+                { name: 'Little Sword' },
+                { name: 'Sword' },
+                { name: 'Axe' },
+                { name: 'Maxe' },
+                { name: 'Knife' },
+                { name: 'Torch' },
+            ],
+        },
+        {
+            id: '7',
+            name: 'Hand Left',
+            equipmentCategories: [{ name: 'Shield' }, { name: 'Magic Book' }],
+        },
+        {
+            id: '8',
+            name: 'Two Handed',
+            equipmentCategories: [{ name: 'Bow' }, { name: 'Staff' }, { name: 'Great Sword' }],
+        },
+        {
+            id: '9',
+            name: 'Back',
+        },
+        {
+            id: '10',
+            name: 'Extra 1',
+            equipmentCategories: [{ name: 'Ring' }],
+        },
+        {
+            id: '11',
+            name: 'Extra 2',
+        },
+    ];
 
     // tslint:disable-next-line:variable-name
     private readonly _equipmentCategories: EquipmentCategoryModel[] = [
@@ -146,6 +213,10 @@ export class EquipmentCategoryDataService {
             ],
         },
     ];
+
+    get equipmentPositions(): EquipmentPositionModel[] {
+        return this._equipmentPositions;
+    }
 
     get equipmentCategories(): EquipmentCategoryModel[] {
         return this._equipmentCategories;

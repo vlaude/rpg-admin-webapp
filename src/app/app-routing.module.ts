@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AttributesContainerComponent } from './attributes/containers/attributes-container/attributes-container.component';
 import { DamageTypesContainerComponent } from './damage-types/containers/damage-types-container/damage-types-container.component';
 // tslint:disable-next-line:max-line-length
-import { EquipmentCategoriesContainerComponent } from './equipment-categories/containers/equipment-categories-container/equipment-categories-container.component';
+import { EquipmentCategoriesContainerComponent } from './equipment/containers/equipment-categories-container/equipment-categories-container.component';
+// tslint:disable-next-line:max-line-length
+import { EquipmentPositionsContainerComponent } from './equipment/containers/equipment-positions-container/equipment-positions-container.component';
 
 const routes: Routes = [
     {
@@ -18,6 +20,10 @@ const routes: Routes = [
     {
         path: 'damage-types',
         component: DamageTypesContainerComponent,
+    },
+    {
+        path: 'equipment-positions',
+        component: EquipmentPositionsContainerComponent,
     },
     {
         path: 'equipment-categories',

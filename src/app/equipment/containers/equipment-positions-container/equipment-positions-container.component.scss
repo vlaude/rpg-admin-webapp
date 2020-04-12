@@ -1,0 +1,6 @@
+.equipment-positions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1.5em;
+    grid-row-gap: 1.5em;
+}

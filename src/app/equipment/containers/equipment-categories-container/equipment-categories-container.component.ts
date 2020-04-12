@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EquipmentCategoryModel } from '../../models/equipment-category.model';
-import { EquipmentCategoryApi } from '../../api/equipment-category.api';
+import { EquipmentApi } from '../../api/equipment.api';
 
 @Component({
     selector: 'app-equipment-categories-container',
@@ -10,10 +10,10 @@ import { EquipmentCategoryApi } from '../../api/equipment-category.api';
 export class EquipmentCategoriesContainerComponent implements OnInit {
     equipmentCategories: EquipmentCategoryModel[];
 
-    constructor(private equipmentCategoryApi: EquipmentCategoryApi) {}
+    constructor(private equipmentApi: EquipmentApi) {}
 
     ngOnInit(): void {
-        this.equipmentCategoryApi.getAll().subscribe(equipmentCategories => {
+        this.equipmentApi.getCategories().subscribe(equipmentCategories => {
             this.equipmentCategories = equipmentCategories;
             console.log(this.equipmentCategories);
         });

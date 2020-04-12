@@ -1,0 +1,34 @@
+<div class="card">
+    <div
+        class="card-header"
+        (click)="showEquipmentCategories = !showEquipmentCategories"
+        [ngClass]="{ collapsible: equipmentPosition.equipmentCategories?.length > 0 }"
+    >
+        <div style="display: flex; align-items: center;">
+            <div class="icon lg">?</div>
+            <div class="card-title">
+                {{ equipmentPosition.name }} (
+                <span style="color: var(--yankees-blue1);">{{
+                    equipmentPosition.equipmentCategories?.length || 0
+                }}</span>
+                )
+            </div>
+        </div>
+        <div
+            class="collapse-cursor"
+            [ngClass]="{ collapsed: showEquipmentCategories }"
+            *ngIf="equipmentPosition.equipmentCategories?.length > 0"
+        ></div>
+    </div>
+    <!-- Equipment categories -->
+    <div
+        class="card-content"
+        *ngIf="showEquipmentCategories"
+        [ngClass]="{ 'card-content--visible': showEquipmentCategories }"
+    >
+        <div class="equipment-categories" *ngFor="let categories of equipmentPosition.equipmentCategories">
+            <div class="icon" style="margin-right: 0.5em;">?</div>
+            {{ categories.name }}
+        </div>
+    </div>
+</div>
