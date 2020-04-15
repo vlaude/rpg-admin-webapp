@@ -8,3 +8,5 @@ export interface AttributeModel {
     isPowerSource?: boolean;
     isVitalitySource?: boolean;
 }
+
+export type AttributeType = 'attribute' | 'vitality' | 'power';

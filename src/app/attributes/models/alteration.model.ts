@@ -1,6 +1,6 @@
 import { AttributeModel } from './attribute.model';
 
-export type AlterationType = 'DamageType' | 'PowerSource' | 'Ability';
+export type AlterationType = 'DamageType' | 'Attribute' | 'Ability';
 
 export interface AlterationModel {
     id: string;

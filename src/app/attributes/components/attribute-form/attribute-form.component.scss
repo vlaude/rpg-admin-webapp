@@ -1,0 +1,60 @@
+.attribute-form-container {
+    form {
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+
+        .form-name-description,
+        .form-icon {
+            padding: 1.5em;
+        }
+        .form-name-description,
+        .form-type {
+            border-bottom: 2px solid var(--yankees-blue6);
+        }
+
+        .form-name-description {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-type {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            .radio-container {
+                display: flex;
+                align-items: center;
+                padding: 0.5em;
+                border-right: 2px solid var(--yankees-blue6);
+                &:not(:last-child) {
+                    border-bottom: 2px solid var(--yankees-blue6);
+                }
+                label {
+                    padding: 0.25em;
+                }
+            }
+
+            .attribute-type-chip {
+                justify-self: center;
+                align-self: center;
+                font-size: 2em;
+                border: 2px solid var(--yankees-blue2);
+                border-radius: 50px;
+            }
+        }
+
+        .form-icon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .icon {
+                margin-right: 1em;
+            }
+        }
+
+        label {
+            padding: 0 0.5em 0.5em 0.5em;
+        }
+    }
+}

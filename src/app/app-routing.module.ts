@@ -8,6 +8,8 @@ import { EquipmentCategoriesContainerComponent } from './equipment/containers/eq
 import { EquipmentPositionsContainerComponent } from './equipment/containers/equipment-positions-container/equipment-positions-container.component';
 // tslint:disable-next-line:max-line-length
 import { EquipmentQualitiesContainerComponent } from './equipment/containers/equipment-qualities-container/equipment-qualities-container.component';
+import { CreateAttributeContainerComponent } from './attributes/containers/create-attribute-container/create-attribute-container.component';
+import { AttributesCardsContainerComponent } from './attributes/containers/attributes-cards-container/attributes-cards-container.component';
 
 const routes: Routes = [
     {
@@ -18,6 +20,16 @@ const routes: Routes = [
     {
         path: 'attributes',
         component: AttributesContainerComponent,
+        children: [
+            {
+                path: '',
+                component: AttributesCardsContainerComponent,
+            },
+            {
+                path: 'add',
+                component: CreateAttributeContainerComponent,
+            },
+        ],
     },
     {
         path: 'damage-types',

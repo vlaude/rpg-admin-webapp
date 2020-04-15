@@ -16,6 +16,12 @@ import { EquipmentPositionCardComponent } from './equipment/components/equipment
 import { EquipmentQualitiesContainerComponent } from './equipment/containers/equipment-qualities-container/equipment-qualities-container.component';
 import { EquipmentQualityCardComponent } from './equipment/components/equipment-quality-card/equipment-quality-card.component';
 import { EquipmentQualityGraphComponent } from './equipment/components/equipment-quality-graph/equipment-quality-graph.component';
+import { CreateAttributeContainerComponent } from './attributes/containers/create-attribute-container/create-attribute-container.component';
+import { AttributesCardsContainerComponent } from './attributes/containers/attributes-cards-container/attributes-cards-container.component';
+import { AttributeFormComponent } from './attributes/components/attribute-form/attribute-form.component';
+import { AlterationFormComponent } from './attributes/components/alteration-form/alteration-form.component';
+import { FormsModule } from '@angular/forms';
+import { ModalModule } from './_modal';
 
 @NgModule({
     declarations: [
@@ -32,9 +38,13 @@ import { EquipmentQualityGraphComponent } from './equipment/components/equipment
         EquipmentQualitiesContainerComponent,
         EquipmentQualityCardComponent,
         EquipmentQualityGraphComponent,
+        CreateAttributeContainerComponent,
+        AttributesCardsContainerComponent,
+        AttributeFormComponent,
+        AlterationFormComponent,
     ],
 
-    imports: [BrowserModule, AppRoutingModule, CoreModule],
+    imports: [BrowserModule, AppRoutingModule, CoreModule, FormsModule, ModalModule],
     providers: [],
     bootstrap: [AppComponent],
 })

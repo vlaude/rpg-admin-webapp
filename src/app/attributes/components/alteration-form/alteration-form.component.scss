@@ -1,0 +1,48 @@
+.alteration-form-container {
+    .alteration-add {
+        cursor: pointer;
+        padding: 1.5em;
+        border-bottom: 2px solid var(--yankees-blue6);
+
+        &:hover {
+            background: var(--yankees-blue6);
+        }
+    }
+
+    .no-alteration {
+        padding: 1em;
+    }
+}
+
+jw-modal {
+    font-size: 1rem;
+    .intro {
+        padding: 2em;
+        border-bottom: 2px solid var(--yankees-blue6);
+    }
+    .add-alteration {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .alteration-type,
+        .alteration-value {
+            padding: 2em;
+        }
+        .alteration-type {
+            border-right: 2px solid var(--yankees-blue6);
+            div {
+                display: flex;
+                flex-direction: column;
+                label {
+                    padding-left: 0.5em;
+                }
+
+                select {
+                    margin: 0.5em 0;
+                }
+                &:last-child {
+                    margin-top: 0.5em;
+                }
+            }
+        }
+    }
+}
