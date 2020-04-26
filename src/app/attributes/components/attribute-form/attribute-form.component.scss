@@ -1,21 +1,27 @@
 .attribute-form-container {
     form {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
         font-size: 1rem;
 
         .form-name-description,
         .form-icon {
             padding: 1.5em;
         }
-        .form-name-description,
+        .form-icon,
         .form-type {
             border-bottom: 2px solid var(--yankees-blue6);
         }
 
-        .form-name-description {
+        .form-icon {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-right: 2px solid var(--yankees-blue6);
+
+            .icon {
+                font-size: 2.2rem;
+            }
         }
 
         .form-type {
@@ -43,14 +49,11 @@
             }
         }
 
-        .form-icon {
+        .form-name-description {
+            grid-column-start: 1;
+            grid-column-end: 3;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .icon {
-                margin-right: 1em;
-            }
+            flex-direction: column;
         }
 
         label {

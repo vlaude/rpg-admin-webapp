@@ -1,20 +1,13 @@
 <div class="attribute-form-container">
     <form>
-        <!-- Attribute name and description -->
-        <div class="form-name-description">
-            <label for="name" class="required">
-                Name
-            </label>
-            <input id="name" type="text" placeholder="Attribute's name" name="name" required />
-            <br />
-            <label for="description">
-                Description
-            </label>
-            <textarea id="description" placeholder="You can add a description ..." name="description"></textarea>
+        <!-- Attribute icon -->
+        <div class="form-icon">
+            <div class="icon lg">?</div>
         </div>
         <!-- Attribute type -->
         <div class="form-type">
             <div class="form-type-radios">
+                <!-- Classic -->
                 <div class="radio-container">
                     <input
                         id="classic"
@@ -26,17 +19,20 @@
                     />
                     <label for="classic"><span> </span>Classic attribute</label>
                 </div>
+                <!-- Vitality -->
                 <div class="radio-container">
                     <input id="vitality" type="radio" value="vitality" name="type" [(ngModel)]="attributeType" /><label
                         for="vitality"
                         ><span></span>Vitality source</label
                     >
                 </div>
+                <!-- Power -->
                 <div class="radio-container">
                     <input id="power" type="radio" value="power" name="type" [(ngModel)]="attributeType" />
                     <label for="power"><span></span>Power source</label>
                 </div>
             </div>
+            <!-- Type selected chip -->
             <div class="attribute-type-chip">
                 <div
                     class="attribute-chip lg"
@@ -47,10 +43,17 @@
                 ></div>
             </div>
         </div>
-        <!-- Attribute icon -->
-        <div class="form-icon">
-            <div>Select an icon <span style="font-weight: bold;">(coming soon tqt bro)</span></div>
-            <div class="icon lg">?</div>
+        <!-- Attribute name and description -->
+        <div class="form-name-description">
+            <label for="name" class="required">
+                Name
+            </label>
+            <input id="name" type="text" placeholder="Attribute's name" name="name" required />
+            <br />
+            <label for="description">
+                Description
+            </label>
+            <textarea id="description" placeholder="You can add a description ..." name="description"></textarea>
         </div>
     </form>
 </div>

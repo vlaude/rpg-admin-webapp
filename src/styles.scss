@@ -27,6 +27,37 @@ a {
 
 /* Button */
 
+button {
+    cursor: pointer;
+    padding: 1em 1.5em;
+    border-radius: 5px;
+    font-size: 0.8em;
+    background: var(--btn-background);
+    color: var(--btn-color);
+    border: var(--btn-border);
+    transition: background-color 0.25s ease-in-out;
+    &.success {
+        --btn-color: var(--green-success);
+        --btn-border: 1px solid var(--green-success);
+    }
+    &.lg {
+        padding: 2em 2.5em;
+    }
+    &.sm {
+        padding: 0.5em 1em;
+    }
+    &:hover:not(:disabled) {
+        background: var(--btn-hover-background);
+    }
+    &:focus {
+        outline: none;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.75;
+    }
+}
+
 div.fab {
     cursor: pointer;
     position: fixed;
@@ -211,6 +242,8 @@ div.attribute-chip.power-source {
 
     --btn-background: var(--yankees-blue5);
     --btn-color: var(--yankees-blue0);
+    --btn-border: 1px solid var(--yankees-blue1);
+    --btn-hover-background: var(--yankees-blue6);
 
     --input-size: 0.9rem;
     --input-background: var(--yankees-blue6);
@@ -242,4 +275,9 @@ div.attribute-chip.power-source {
 
     --alteration-bonus-color: #16db93;
     --alteration-malus-color: #f24236;
+
+    --green-success: #8fc93a;
+    --green-success-hover: #b2ff00;
+    --red-error: #fe4a49;
+    --red-error-hover: #db3b3a;
 }

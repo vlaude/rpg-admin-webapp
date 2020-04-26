@@ -1,0 +1,8 @@
+<div [ngStyle]="{ 'font-size.rem': fontSize }">
+    <fa-icon *ngIf="alteration.value > 0" class="bonus" [icon]="faPlus"></fa-icon>
+    <fa-icon *ngIf="alteration.value < 0" class="malus" [icon]="faMinus"></fa-icon>
+    <span>{{ alteration.value | abs }}</span>
+    <span>{{ alteration.type }}</span>
+    <span style="font-weight: bold;">{{ alteration.property }}</span>
+    <span> <fa-icon *ngIf="removable" [icon]="faTimes" (click)="removeClicked.emit()"></fa-icon> </span>
+</div>

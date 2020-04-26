@@ -1,33 +1,45 @@
 .alteration-form-container {
     .alteration-add {
-        cursor: pointer;
-        padding: 1.5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+        padding: 1em;
         border-bottom: 2px solid var(--yankees-blue6);
 
-        &:hover {
-            background: var(--yankees-blue6);
+        /* Add alteration icon */
+        fa-icon {
+            cursor: pointer;
+            color: var(--green-success);
+            margin-right: 1em;
+            &:hover {
+                color: var(--green-success-hover);
+            }
         }
     }
-
     .no-alteration {
         padding: 1em;
+    }
+    .alteration {
+        padding: 1em 1.5em;
+        border-bottom: 2px solid var(--yankees-blue6);
     }
 }
 
 jw-modal {
     font-size: 1rem;
-    .intro {
+    .modal-header {
         padding: 2em;
         border-bottom: 2px solid var(--yankees-blue6);
     }
-    .add-alteration {
+    .modal-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        .alteration-type,
+        .alteration-type-property,
         .alteration-value {
             padding: 2em;
         }
-        .alteration-type {
+        .alteration-type-property {
             border-right: 2px solid var(--yankees-blue6);
             div {
                 display: flex;
@@ -43,6 +55,30 @@ jw-modal {
                     margin-top: 0.5em;
                 }
             }
+        }
+        .alteration-value {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            input {
+                font-size: 1.5rem;
+                width: 3em;
+                height: 2em;
+                text-align: center;
+                padding: 0.5em;
+            }
+        }
+    }
+    .modal-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 1em;
+        border-top: 2px solid var(--yankees-blue6);
+        button:last-child {
+            margin-left: 1em;
         }
     }
 }

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -22,6 +23,9 @@ import { AttributeFormComponent } from './attributes/components/attribute-form/a
 import { AlterationFormComponent } from './attributes/components/alteration-form/alteration-form.component';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from './_modal';
+import { AlterationRowComponent } from './attributes/components/alteration-row/alteration-row.component';
+import { AbsPipe } from './pipes/abs.pipe';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
     declarations: [
@@ -42,9 +46,11 @@ import { ModalModule } from './_modal';
         AttributesCardsContainerComponent,
         AttributeFormComponent,
         AlterationFormComponent,
+        AlterationRowComponent,
+        AbsPipe,
     ],
 
-    imports: [BrowserModule, AppRoutingModule, CoreModule, FormsModule, ModalModule],
+    imports: [BrowserModule, AppRoutingModule, CoreModule, FormsModule, ModalModule, FontAwesomeModule],
     providers: [],
     bootstrap: [AppComponent],
 })

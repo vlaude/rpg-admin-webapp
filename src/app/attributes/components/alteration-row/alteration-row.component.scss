@@ -1,0 +1,30 @@
+div {
+    display: flex;
+    align-items: center;
+
+    span:not(:first-child):not(:last-child) {
+        margin-right: 0.5em;
+    }
+    fa-icon:first-child {
+        margin-right: 0.5em;
+
+        &.bonus {
+            color: var(--alteration-bonus-color);
+        }
+        &.malus {
+            color: var(--alteration-malus-color);
+        }
+    }
+    span:last-child {
+        flex-grow: 1;
+        text-align: end;
+        fa-icon {
+            cursor: pointer;
+            color: var(--red-error);
+
+            &:hover {
+                color: var(--red-error-hover);
+            }
+        }
+    }
+}

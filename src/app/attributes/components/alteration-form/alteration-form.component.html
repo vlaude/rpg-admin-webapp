@@ -1,18 +1,30 @@
 <div class="alteration-form-container">
-    <div class="alteration-add" (click)="openAddAlterationModal()">
-        <span style="color: var(--alteration-bonus-color);">+</span> Add an alteration
+    <div class="alteration-add">
+        <b>Alterations</b>
+        <fa-icon [icon]="faPlus" size="lg" (click)="openAddAlterationModal()"></fa-icon>
     </div>
     <div class="no-alteration" *ngIf="newAlterations.length === 0">No alteration added yet.</div>
+    <!-- Alterations added -->
+    <div *ngFor="let alteration of newAlterations" class="alteration">
+        <app-alteration-row
+            [alteration]="alteration"
+            [removable]="true"
+            (removeClicked)="removeAlteration(alteration)"
+        ></app-alteration-row>
+    </div>
 </div>
 
+<!-- Add alteration modal -->
 <jw-modal id="add-alteration-modal">
-    <div class="intro">
+    <div class="modal-header">
         Alterations will te permettre de give <span style="color: var(--alteration-bonus-color);">bonus</span> or
         <span style="color: var(--alteration-malus-color);">malus</span> to other attributes, damage types, abilities
         and more.
     </div>
-    <div class="add-alteration">
-        <div class="alteration-type">
+    <div class="modal-content">
+        <!-- Left side: Alteration Type + Property -->
+        <div class="alteration-type-property">
+            <!-- Alteration Type -->
             <div>
                 <label for="alteration-type">
                     What do you veux to alterate ?
@@ -23,23 +35,38 @@
                     [(ngModel)]="newAlterationType"
                     (change)="onAlterationTypeChange($event)"
                 >
+                    <option disabled selected value> -- select an option -- </option>
                     <option value="DamageType">DamageType</option>
                     <option value="Attribute">Attribute</option>
                     <option value="Ability" disabled>Ability</option>
                 </select>
             </div>
+            <!-- Alteration Property -->
             <div *ngIf="newAlterationType">
                 <label for="alteration-property">Which one ?</label>
                 <select name="alteration-property" id="alteration-property" [(ngModel)]="newAlterationProperty">
+                    <option disabled selected value> -- select an option -- </option>
                     <option [value]="property.name" *ngFor="let property of alterationPropertiesOptions">{{
                         property.name
                     }}</option>
                 </select>
             </div>
         </div>
+        <!-- Right side: Alteration Value -->
         <div class="alteration-value" *ngIf="newAlterationProperty">
-            <b>1 point</b> of the new attribute will alterate the
-            <b>{{ newAlterationType }} {{ newAlterationProperty }}</b> by
+            <div>
+                <b>1 point</b> of the new attribute will alterate the
+                <b>{{ newAlterationType }} {{ newAlterationProperty }}</b> by
+            </div>
+
+            <label>
+                <input type="number" [(ngModel)]="newAlterationValue" required />
+            </label>
+            <div></div>
         </div>
+    </div>
+    <div class="modal-footer">
+        <button [disabled]="newAlterationValue === 0" (click)="addAlteration()" class="success">Add</button>
+        <button (click)="closeAddAlterationModal()" class="cancel">Cancel</button>
     </div>
 </jw-modal>

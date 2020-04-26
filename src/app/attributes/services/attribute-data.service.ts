@@ -56,7 +56,7 @@ export class AttributeDataService {
                 { id: '2', type: 'DamageType', value: 4, property: 'Magical' },
                 {
                     id: '3',
-                    type: 'PowerSource',
+                    type: 'Attribute',
                     value: 10,
                     property: 'Chakra',
                 },
@@ -70,7 +70,7 @@ export class AttributeDataService {
             description: '',
             alterations: [
                 { id: '4', type: 'DamageType', value: -5, property: 'Physical' },
-                { id: '5', type: 'PowerSource', value: -20, property: 'Chakra' },
+                { id: '5', type: 'Attribute', value: -20, property: 'Chakra' },
             ],
             isPowerSource: false,
             isVitalitySource: false,
