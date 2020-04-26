@@ -3,7 +3,12 @@
         <div class="card-title">Create a new Attribute</div>
     </div>
     <div class="card-content">
-        <app-attribute-form></app-attribute-form>
+        <app-attribute-form [form]="form"></app-attribute-form>
         <app-alteration-form></app-alteration-form>
     </div>
+    <div class="card-footer">
+        <button class="success" [disabled]="!form.valid" (click)="submitForm()">Create Attribute</button>
+        <button class="cancel" routerLink="attributes">Cancel</button>
+    </div>
+    {{ form.value | json }}
 </div>

@@ -21,11 +21,12 @@ import { CreateAttributeContainerComponent } from './attributes/containers/creat
 import { AttributesCardsContainerComponent } from './attributes/containers/attributes-cards-container/attributes-cards-container.component';
 import { AttributeFormComponent } from './attributes/components/attribute-form/attribute-form.component';
 import { AlterationFormComponent } from './attributes/components/alteration-form/alteration-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from './_modal';
 import { AlterationRowComponent } from './attributes/components/alteration-row/alteration-row.component';
 import { AbsPipe } from './pipes/abs.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -50,7 +51,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         AbsPipe,
     ],
 
-    imports: [BrowserModule, AppRoutingModule, CoreModule, FormsModule, ModalModule, FontAwesomeModule],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        CoreModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ModalModule,
+        FontAwesomeModule,
+    ],
     providers: [],
     bootstrap: [AppComponent],
 })

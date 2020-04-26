@@ -1,5 +1,5 @@
 <div class="attribute-form-container">
-    <form>
+    <form [formGroup]="form">
         <!-- Attribute icon -->
         <div class="form-icon">
             <div class="icon lg">?</div>
@@ -9,26 +9,17 @@
             <div class="form-type-radios">
                 <!-- Classic -->
                 <div class="radio-container">
-                    <input
-                        id="classic"
-                        type="radio"
-                        value="attribute"
-                        name="type"
-                        [(ngModel)]="attributeType"
-                        checked
-                    />
+                    <input id="classic" type="radio" value="attribute" formControlName="type" checked />
                     <label for="classic"><span> </span>Classic attribute</label>
                 </div>
                 <!-- Vitality -->
                 <div class="radio-container">
-                    <input id="vitality" type="radio" value="vitality" name="type" [(ngModel)]="attributeType" /><label
-                        for="vitality"
-                        ><span></span>Vitality source</label
-                    >
+                    <input id="vitality" type="radio" value="vitality" formControlName="type" />
+                    <label for="vitality"><span></span>Vitality source</label>
                 </div>
                 <!-- Power -->
                 <div class="radio-container">
-                    <input id="power" type="radio" value="power" name="type" [(ngModel)]="attributeType" />
+                    <input id="power" type="radio" value="power" formControlName="type" />
                     <label for="power"><span></span>Power source</label>
                 </div>
             </div>
@@ -37,8 +28,8 @@
                 <div
                     class="attribute-chip lg"
                     [ngClass]="{
-                        'vitality-source': attributeType === 'vitality',
-                        'power-source': attributeType === 'power'
+                        'vitality-source': form.value.type === 'vitality',
+                        'power-source': form.value.type === 'power'
                     }"
                 ></div>
             </div>
@@ -48,12 +39,16 @@
             <label for="name" class="required">
                 Name
             </label>
-            <input id="name" type="text" placeholder="Attribute's name" name="name" required />
+            <input id="name" type="text" placeholder="Attribute's name" formControlName="name" required />
             <br />
             <label for="description">
                 Description
             </label>
-            <textarea id="description" placeholder="You can add a description ..." name="description"></textarea>
+            <textarea
+                id="description"
+                placeholder="You can add a description ..."
+                formControlName="description"
+            ></textarea>
         </div>
     </form>
 </div>

@@ -11,4 +11,15 @@
             border-right: 2px solid var(--yankees-blue6);
         }
     }
+
+    .card-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 1em;
+        border-top: 2px solid var(--yankees-blue6);
+        button:last-child {
+            margin-left: 1em;
+        }
+    }
 }

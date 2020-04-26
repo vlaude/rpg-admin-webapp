@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AttributeType } from '../../models/attribute.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-attribute-form',
@@ -7,7 +7,7 @@ import { AttributeType } from '../../models/attribute.model';
     styleUrls: ['./attribute-form.component.scss'],
 })
 export class AttributeFormComponent implements OnInit {
-    attributeType: AttributeType = 'attribute';
+    @Input() form: FormGroup;
 
     constructor() {}
 
