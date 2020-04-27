@@ -13,17 +13,7 @@
         </div>
         <div class="alterations-container">
             <div class="alteration" *ngFor="let alteration of attribute.alterations">
-                <span
-                    [ngClass]="{
-                        'alteration-symbol-bonus': alteration.value > 0,
-                        'alteration-symbol-malus': alteration.value < 0
-                    }"
-                ></span>
-                <span style="font-size: 1rem;">{{
-                    alteration.value < 0 ? alteration.value * -1 : alteration.value
-                }}</span>
-                <span style="margin-left: 0.5em;">{{ alteration.type }}</span>
-                <b style="margin-left: 0.5em;">{{ alteration.property }}</b>
+                <app-alteration-row [alteration]="alteration"></app-alteration-row>
             </div>
         </div>
     </div>

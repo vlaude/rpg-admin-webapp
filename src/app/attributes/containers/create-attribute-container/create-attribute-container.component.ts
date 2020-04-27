@@ -23,6 +23,7 @@ export class CreateAttributeContainerComponent implements OnInit {
             name: fb.control('', [Validators.required, Validators.maxLength(20)]),
             description: fb.control('', [Validators.maxLength(255)]),
             type: fb.control('attribute'),
+            alterations: fb.array([]),
         });
     }
 
@@ -35,7 +36,7 @@ export class CreateAttributeContainerComponent implements OnInit {
         const newAttribute: Omit<AttributeModel, 'id'> = {
             name: this.form.value.name,
             description: this.form.value.description,
-            alterations: [],
+            alterations: this.form.value.alterations,
             isVitalitySource: this.form.value.type === 'vitality',
             isPowerSource: this.form.value.type === 'power',
         };

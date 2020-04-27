@@ -3,9 +3,9 @@
         <b>Alterations</b>
         <fa-icon [icon]="faPlus" size="lg" (click)="openAddAlterationModal()"></fa-icon>
     </div>
-    <div class="no-alteration" *ngIf="newAlterations.length === 0">No alteration added yet.</div>
+    <div class="no-alteration" *ngIf="form.value.alterations.length === 0">No alteration added yet.</div>
     <!-- Alterations added -->
-    <div *ngFor="let alteration of newAlterations" class="alteration">
+    <div *ngFor="let alteration of form.value.alterations" class="alteration">
         <app-alteration-row
             [alteration]="alteration"
             [removable]="true"
@@ -42,9 +42,14 @@
                 </select>
             </div>
             <!-- Alteration Property -->
-            <div *ngIf="newAlterationType">
+            <div>
                 <label for="alteration-property">Which one ?</label>
-                <select name="alteration-property" id="alteration-property" [(ngModel)]="newAlterationProperty">
+                <select
+                    name="alteration-property"
+                    id="alteration-property"
+                    [(ngModel)]="newAlterationProperty"
+                    [disabled]="!newAlterationType"
+                >
                     <option disabled selected value> -- select an option -- </option>
                     <option [value]="property.name" *ngFor="let property of alterationPropertiesOptions">{{
                         property.name

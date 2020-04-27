@@ -110,6 +110,9 @@ select {
     &:focus {
         outline: none;
     }
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
 input[type='radio'] {
     display: none;
@@ -133,6 +136,7 @@ input[type='radio'] {
 }
 select {
     height: 3em;
+    cursor: pointer;
 }
 
 /* Card */
@@ -239,6 +243,8 @@ div.attribute-chip.power-source {
 
     --color: var(--yankees-blue0);
     --color-light: var(--yankees-blue1);
+
+    --link-color: #2ec0f9;
 
     --btn-background: var(--yankees-blue5);
     --btn-color: var(--yankees-blue0);

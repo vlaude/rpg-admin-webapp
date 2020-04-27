@@ -1,5 +1,5 @@
 .card {
-    height: 250px;
+    height: 255px;
 
     .card-header {
         display: flex;
@@ -7,22 +7,23 @@
         align-items: center;
     }
     .card-content {
+        overflow: auto;
+
         .description {
             padding: 1em 1.3em;
         }
         .alterations-container {
-        }
-        .alteration {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-
-            height: 3em;
-            border-top: 2px solid var(--card-divider-color);
-            width: 100%;
-        }
-        .alteration:last-child {
-            border-bottom: 2px solid var(--card-divider-color);
+            .alteration {
+                display: flex;
+                align-items: center;
+                height: 3em;
+                padding-left: 1em;
+                border-top: 2px solid var(--card-divider-color);
+                width: 100%;
+            }
+            .alteration:last-child {
+                border-bottom: 2px solid var(--card-divider-color);
+            }
         }
     }
 }
