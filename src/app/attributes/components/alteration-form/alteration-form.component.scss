@@ -9,12 +9,7 @@
 
         /* Add alteration icon */
         fa-icon {
-            cursor: pointer;
-            color: var(--green-success);
             margin-right: 1em;
-            &:hover {
-                color: var(--green-success-hover);
-            }
         }
     }
     .no-alteration {

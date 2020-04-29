@@ -2,4 +2,4 @@
     <p *ngIf="attributes?.length === 0">You don't have attribute yet. <a routerLink="add">Start creating one !</a></p>
     <app-attribute-card *ngFor="let attribute of attributes" [attribute]="attribute"></app-attribute-card>
 </div>
-<div type="button" class="fab" routerLink="add">+</div>
+<div class="fab" routerLink="add">+</div>

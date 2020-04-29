@@ -1,0 +1,42 @@
+<div class="card">
+    <form [formGroup]="form">
+        <!-- Header -->
+        <div class="card-header">
+            <div class="icon lg">?</div>
+            <input type="text" formControlName="name" placeholder="Name" required />
+        </div>
+        <!-- Content -->
+        <div class="card-content">
+            <div class="affects-container">
+                <div class="title">
+                    <span>Affects</span>
+                </div>
+                <!-- New Affects -->
+                <div class="affect" formArrayName="affects" *ngFor="let affect of affects.controls; let i = index">
+                    <div [formGroupName]="i">
+                        <select formControlName="id">
+                            <option disabled selected value> -- select an attribute -- </option>
+                            <option *ngFor="let attribute of attributes" [value]="attribute.id">
+                                {{ attribute.name }}</option
+                            >
+                        </select>
+                        <fa-icon [icon]="faTimes" class="remove" (click)="removeAffectControls(affect)"></fa-icon>
+                    </div>
+                </div>
+
+                <!-- No Affect display -->
+                <p style="padding: 1em 2em 0 2em; margin: 0;" *ngIf="affects?.length <= 0">No affects add yet.</p>
+                <!-- Add Affect icon -->
+                <div style="width: 100%; text-align: center; margin-top: 1em;">
+                    <fa-icon [icon]="faPlus" size="lg" class="add" (click)="addAffectControls()"></fa-icon>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+    </form>
+    <!-- Actions -->
+    <div class="card-actions">
+        <button type="button" class="success" [disabled]="!form.valid" (click)="submit()">Submit</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+    </div>
+</div>

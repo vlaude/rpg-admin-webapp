@@ -1,9 +1,12 @@
 <div class="card">
+    <!-- Header -->
     <div class="card-header">
         <div class="icon lg">?</div>
         <div class="card-title">{{ damageType.name }}</div>
     </div>
+    <!-- Content -->
     <div class="card-content">
+        <!-- Attributes Affected -->
         <div class="affects-container">
             <div class="title">Affects</div>
             <div class="affect" *ngFor="let attribute of damageType.attributesAffected">
@@ -17,6 +20,7 @@
                 {{ attribute.name }}
             </div>
         </div>
+        <!-- Altered by -->
         <div class="altered-by-container">
             <div class="title">Altered by</div>
             <div class="alteration" *ngFor="let alteration of damageType.alterations">
@@ -40,4 +44,6 @@
             </div>
         </div>
     </div>
+    <!-- content -->
 </div>
+<!-- card -->

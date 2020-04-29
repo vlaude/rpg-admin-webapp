@@ -1,3 +1,14 @@
 <div class="damage-types-grid">
+    <!-- Damage Type Form -->
+    <app-damage-type-card-form
+        *ngIf="form"
+        [form]="form"
+        [attributes]="attributes"
+        (submitClicked)="createDamageType()"
+        (cancelClicked)="hideForm()"
+    ></app-damage-type-card-form>
+    <!-- Existing Damage Type Cards -->
     <app-damage-type-card *ngFor="let damageType of damageTypes" [damageType]="damageType"></app-damage-type-card>
 </div>
+<!-- Fab button to display the form -->
+<div class="fab" (click)="showForm()" *ngIf="!form">+</div>

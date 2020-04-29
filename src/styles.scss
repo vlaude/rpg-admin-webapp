@@ -178,6 +178,20 @@ div.icon.sm {
     width: 1em;
     height: 1em;
 }
+fa-icon.add {
+    cursor: pointer;
+    color: var(--green-success);
+    &:hover {
+        color: var(--green-success-hover);
+    }
+}
+fa-icon.remove {
+    cursor: pointer;
+    color: var(--red-error);
+    &:hover {
+        color: var(--red-error-hover);
+    }
+}
 
 /* Alteration symbols */
 
@@ -282,8 +296,8 @@ div.attribute-chip.power-source {
     --alteration-bonus-color: #16db93;
     --alteration-malus-color: #f24236;
 
-    --green-success: #8fc93a;
-    --green-success-hover: #b2ff00;
+    --green-success: #06d6a0;
+    --green-success-hover: #11b8a5;
     --red-error: #fe4a49;
     --red-error-hover: #db3b3a;
 }

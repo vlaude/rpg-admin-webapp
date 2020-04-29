@@ -4,5 +4,5 @@
     <span>{{ alteration.value | abs }}</span>
     <span>{{ alteration.type }}</span>
     <span style="font-weight: bold;">{{ alteration.property }}</span>
-    <span> <fa-icon *ngIf="removable" [icon]="faTimes" (click)="removeClicked.emit()"></fa-icon> </span>
+    <span> <fa-icon *ngIf="removable" [icon]="faTimes" class="remove" (click)="removeClicked.emit()"></fa-icon> </span>
 </div>

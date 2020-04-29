@@ -1,7 +1,7 @@
 <div class="alteration-form-container">
     <div class="alteration-add">
         <b>Alterations</b>
-        <fa-icon [icon]="faPlus" size="lg" (click)="openAddAlterationModal()"></fa-icon>
+        <fa-icon [icon]="faPlus" size="lg" class="add" (click)="openAddAlterationModal()"></fa-icon>
     </div>
     <div class="no-alteration" *ngIf="form.value.alterations.length === 0">No alteration added yet.</div>
     <!-- Alterations added -->
