@@ -28,6 +28,7 @@ import { AbsPipe } from './pipes/abs.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DamageTypeCardFormComponent } from './damage-types/components/damage-type-card-form/damage-type-card-form.component';
+import { AttributeCardFormComponent } from './attributes/components/attribute-card-form/attribute-card-form.component';
 
 @NgModule({
     declarations: [
@@ -51,6 +52,7 @@ import { DamageTypeCardFormComponent } from './damage-types/components/damage-ty
         AlterationRowComponent,
         AbsPipe,
         DamageTypeCardFormComponent,
+        AttributeCardFormComponent,
     ],
 
     imports: [

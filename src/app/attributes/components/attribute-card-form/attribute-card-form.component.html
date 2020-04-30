@@ -1,0 +1,64 @@
+<div class="card">
+    <form [formGroup]="form">
+        <!-- Header -->
+        <div class="card-header">
+            <!-- Icon -->
+            <div class="icon lg">?</div>
+            <!-- Name -->
+            <input type="text" formControlName="name" placeholder="Attribute name" />
+            <!-- Type -->
+            <div class="attribute-chip lg"></div>
+        </div>
+        <div class="card-content">
+            <!-- Description -->
+            <div class="description">
+                <textarea placeholder="You can add a description" formControlName="description"></textarea>
+            </div>
+            <div class="alterations">
+                <!-- New Alterations -->
+                <div formArrayName="alterations" *ngFor="let alteration of alterations.controls; let i = index">
+                    <div class="alteration" [formGroupName]="i">
+                        <!-- New Alteration Type -->
+                        <select formControlName="type">
+                            <option disabled selected value> -- select a type -- </option>
+                            <option value="DamageType">DamageType</option>
+                            <option value="Attribute">Attribute</option>
+                            <option value="Ability" disabled>Ability</option>
+                        </select>
+                        <!-- New Alteration Property -->
+                        <select formControlName="property">
+                            <option disabled selected value> -- select a property -- </option>
+                            <option
+                                *ngFor="let property of getNewAlterationPropertiesByType(alterations.value[i].type)"
+                                >{{ property.name }}</option
+                            >
+                        </select>
+                        <!-- New Alteration Value -->
+                        <input type="number" formControlName="value" placeholder="value" />
+                        <!-- Remove icon -->
+                        <fa-icon
+                            [icon]="faTimes"
+                            class="remove"
+                            size="lg"
+                            (click)="removeAlterationControls(alteration)"
+                        ></fa-icon>
+                    </div>
+                </div>
+                <!-- No Alteration display -->
+                <p style="padding: 1em 1em 0 1em; margin: 0;" *ngIf="alterations?.length <= 0">
+                    No alteration added yet.
+                </p>
+                <!-- Add Alteration icon -->
+                <div style="width: 100%; text-align: center; padding: 1em 0;">
+                    <fa-icon [icon]="faPlus" size="lg" class="add" (click)="addAlterationControls()"></fa-icon>
+                </div>
+            </div>
+        </div>
+        <!-- card-content -->
+    </form>
+    <!-- Actions -->
+    <div class="card-actions">
+        <button type="button" class="success" [disabled]="!form.valid" (click)="submit()">Submit</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+    </div>
+</div>

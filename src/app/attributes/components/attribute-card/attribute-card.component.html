@@ -1,19 +1,26 @@
 <div class="card">
+    <!-- Header -->
     <div class="card-header">
+        <!-- Icon -->
         <div class="icon lg">?</div>
+        <!-- Name -->
         <div class="card-title">{{ attribute.name }}</div>
+        <!-- Chip -->
         <div
             class="attribute-chip lg"
             [ngClass]="{ 'vitality-source': attribute.isVitalitySource, 'power-source': attribute.isPowerSource }"
         ></div>
     </div>
+    <!-- Content -->
     <div class="card-content">
+        <!-- Description -->
         <div class="description">
             {{ attribute.description || 'No description yet.' }}
         </div>
+        <!-- Alterations -->
         <div class="alterations-container">
             <div class="alteration" *ngFor="let alteration of attribute.alterations">
-                <app-alteration-row [alteration]="alteration"></app-alteration-row>
+                <app-alteration-row [alteration]="alteration" [fontSize]="0.9"></app-alteration-row>
             </div>
         </div>
     </div>
