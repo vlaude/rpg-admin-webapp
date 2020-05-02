@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AttributeModel } from '../../models/attribute.model';
+import { AttributeModel, AttributeType } from '../../models/attribute.model';
 import { DamageTypeModel } from '../../../damage-types/models/damage-type.model';
 import { AlterationType } from '../../models/alteration.model';
 
@@ -20,6 +20,7 @@ export class AttributeCardFormComponent implements OnInit {
     @Output() submitClicked = new EventEmitter<FormGroup>();
     @Output() cancelClicked = new EventEmitter<void>();
 
+    showTypeSelector = false;
     faPlus = faPlus;
     faTimes = faTimes;
 
@@ -61,6 +62,12 @@ export class AttributeCardFormComponent implements OnInit {
             default:
                 return [];
         }
+    }
+
+    setNewAlterationType(type: AttributeType) {
+        this.form.patchValue({
+            type,
+        });
     }
 
     submit() {

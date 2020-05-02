@@ -12,6 +12,53 @@
         input {
             min-width: 30%;
         }
+
+        .attribute-chip.lg {
+            cursor: pointer;
+            border: 1px solid var(--yankees-blue0);
+
+            &:hover {
+                border: 2px solid var(--yankees-blue0);
+            }
+        }
+
+        .type-selector {
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.25s ease-in-out;
+            transform-origin: center center;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            width: 300px;
+            height: 40px;
+            position: absolute;
+            top: -25px;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid var(--color-light);
+            border-radius: 5px;
+            background: var(--yankees-blue6);
+            &.show {
+                opacity: 1;
+            }
+            .item {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                &:hover {
+                    font-weight: bold;
+                    .attribute-chip {
+                        border: 2px solid var(--yankees-blue2);
+                    }
+                }
+
+                .attribute-chip {
+                    margin-right: 0.5em;
+                }
+            }
+        }
     }
 
     .card-content {

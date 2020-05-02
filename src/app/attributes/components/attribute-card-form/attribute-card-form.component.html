@@ -7,7 +7,33 @@
             <!-- Name -->
             <input type="text" formControlName="name" placeholder="Attribute name" />
             <!-- Type -->
-            <div class="attribute-chip lg"></div>
+            <div>
+                <!-- Selected Type -->
+                <div
+                    class="attribute-chip lg"
+                    (click)="showTypeSelector = !showTypeSelector"
+                    [ngClass]="{
+                        'vitality-source': form.value.type === 'vitality',
+                        'power-source': form.value.type === 'power'
+                    }"
+                ></div>
+                <!-- Select Type Box -->
+                <div class="type-selector" [ngClass]="{ show: showTypeSelector }">
+                    <div class="item" (click)="setNewAlterationType('attribute'); showTypeSelector = false">
+                        <div class="attribute-chip"></div>
+                        <span>Classic</span>
+                    </div>
+                    <div class="item" (click)="setNewAlterationType('vitality'); showTypeSelector = false">
+                        <div class="attribute-chip vitality-source"></div>
+                        <span>Vitality</span>
+                    </div>
+                    <div class="item" (click)="setNewAlterationType('power'); showTypeSelector = false">
+                        <div class="attribute-chip power-source"></div>
+                        <span>Power</span>
+                    </div>
+                </div>
+            </div>
+            <!-- type -->
         </div>
         <div class="card-content">
             <!-- Description -->

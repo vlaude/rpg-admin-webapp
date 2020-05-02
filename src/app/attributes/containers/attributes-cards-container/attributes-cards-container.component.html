@@ -16,4 +16,4 @@
     <app-attribute-card *ngFor="let attribute of attributes" [attribute]="attribute"></app-attribute-card>
 </div>
 <!-- Fab button to show the form -->
-<div class="fab" (click)="showForm()">+</div>
+<div class="fab" (click)="showForm()" *ngIf="!form">+</div>

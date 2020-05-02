@@ -8,7 +8,7 @@
     transform-origin: center center;
     transform: translateX(-50%);
     &.success {
-        background: #6da34d;
+        background: var(--green-success);
     }
     &.error {
         background: var(--red-error);
