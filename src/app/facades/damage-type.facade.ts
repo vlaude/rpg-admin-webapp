@@ -1,8 +1,9 @@
 import { DamageTypeState } from '../state/damage-type.state';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { DamageTypeModel } from '../damage-types/models/damage-type.model';
 import { AttributeState } from '../state/attribute.state';
+import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class DamageTypeFacade {
@@ -12,31 +13,36 @@ export class DamageTypeFacade {
         return this.damageTypeState.getDamageTypes$();
     }
 
+    /**
+     * Return all the damage types build with their alterations provided by the attributes.
+     */
     getDamageTypesWithAlterations$(): Observable<DamageTypeModel[]> {
-        const damageTypes = this.damageTypeState.damageTypesValue;
         const attributes = this.attributeState.attributesValue;
-        damageTypes.map(dt => {
-            dt.alterations = [];
 
-            attributes.forEach(att => {
-                att.alterations.forEach(alt => {
-                    if (alt.type === 'DamageType' && alt.property === dt.name) {
-                        dt.alterations.push({
-                            attribute: {
-                                name: att.name,
-                                isPowerSource: att.isPowerSource,
-                                isVitalitySource: att.isVitalitySource,
-                            },
-                            value: alt.value,
+        return this.damageTypeState.getDamageTypes$().pipe(
+            map(damageTypes => {
+                return damageTypes.map(dt => {
+                    dt.alterations = [];
+
+                    attributes.forEach(att => {
+                        att.alterations.forEach(alt => {
+                            if (alt.type === 'DamageType' && alt.property === dt.name) {
+                                dt.alterations.push({
+                                    attribute: {
+                                        name: att.name,
+                                        isPowerSource: att.isPowerSource,
+                                        isVitalitySource: att.isVitalitySource,
+                                    },
+                                    value: alt.value,
+                                });
+                            }
                         });
-                    }
+                    });
+
+                    return dt;
                 });
-            });
-
-            return dt;
-        });
-
-        return of(damageTypes);
+            })
+        );
     }
 
     getDamageTypes(): DamageTypeModel[] {
