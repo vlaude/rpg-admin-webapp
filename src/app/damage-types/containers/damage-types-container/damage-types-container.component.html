@@ -1,4 +1,8 @@
 <div class="damage-types-grid">
+    <!-- No damage type display -->
+    <p *ngIf="damageTypes?.length === 0 && !form">
+        You don't have damage type yet. <a (click)="showForm()">Start creating one !</a>
+    </p>
     <!-- Damage Type Form -->
     <app-damage-type-card-form
         *ngIf="form"

@@ -1,6 +1,6 @@
 <div class="attributes-grid">
     <!-- No attribute display -->
-    <p *ngIf="attributes?.length === 0">
+    <p *ngIf="attributes?.length === 0 && !form">
         You don't have attribute yet. <a (click)="showForm()">Start creating one !</a>
     </p>
     <!-- Attribute Form -->

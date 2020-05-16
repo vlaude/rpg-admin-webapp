@@ -29,8 +29,9 @@ export class DamageTypesContainerComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.damageTypeFacade.getDamageTypes$().subscribe(damageTypes => {
+        this.damageTypeFacade.getDamageTypesWithAlterations$().subscribe(damageTypes => {
             this.damageTypes = damageTypes;
+            console.log(this.damageTypes);
         });
     }
 
