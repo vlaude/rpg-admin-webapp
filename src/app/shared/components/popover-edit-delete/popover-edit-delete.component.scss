@@ -1,0 +1,45 @@
+:host {
+    z-index: 999;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    //transform-origin: center center;
+    //transform: translateX(-50%);
+
+    .popover-container {
+        font-size: 0.9rem;
+
+        border: 1px solid var(--color-light);
+        background: var(--yankees-blue6);
+        border-radius: 5px;
+
+        display: flex;
+        align-items: center;
+
+        div {
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+
+            transition: background 0.25s ease-in-out;
+
+            fa-icon {
+                margin-left: 0.5em;
+            }
+            &:first-child {
+                padding: 0.5em 0.5em 0.5em 1em;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+            &:last-child {
+                padding: 0.5em 1em 0.5em 0.5em;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+            &:hover {
+                background: var(--yankees-blue4);
+            }
+        }
+    }
+}

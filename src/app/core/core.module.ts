@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
-import { AttributeLegendComponent } from './components/attribute-legend/attribute-legend.component';
+import { AttributeLegendComponent } from '../shared/components/attribute-legend/attribute-legend.component';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { SnackbarService } from './services/snackbar.service';
 

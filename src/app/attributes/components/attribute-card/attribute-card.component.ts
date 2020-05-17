@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AttributeModel } from '../../models/attribute.model';
 
 @Component({
@@ -8,6 +8,8 @@ import { AttributeModel } from '../../models/attribute.model';
 })
 export class AttributeCardComponent implements OnInit {
     @Input() attribute: AttributeModel;
+    @Output() edit = new EventEmitter<void>();
+    @Output() delete = new EventEmitter<void>();
 
     constructor() {}
 

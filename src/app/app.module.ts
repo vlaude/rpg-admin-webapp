@@ -24,11 +24,13 @@ import { AlterationFormComponent } from './attributes/components/alteration-form
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from './_modal';
 import { AlterationRowComponent } from './attributes/components/alteration-row/alteration-row.component';
-import { AbsPipe } from './pipes/abs.pipe';
+import { AbsPipe } from './shared/pipes/abs.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DamageTypeCardFormComponent } from './damage-types/components/damage-type-card-form/damage-type-card-form.component';
 import { AttributeCardFormComponent } from './attributes/components/attribute-card-form/attribute-card-form.component';
+import { PopoverEditDeleteComponent } from './shared/components/popover-edit-delete/popover-edit-delete.component';
+import { NotEditingPipe } from './shared/pipes/not-editing.pipe';
 
 @NgModule({
     declarations: [
@@ -53,6 +55,8 @@ import { AttributeCardFormComponent } from './attributes/components/attribute-ca
         AbsPipe,
         DamageTypeCardFormComponent,
         AttributeCardFormComponent,
+        PopoverEditDeleteComponent,
+        NotEditingPipe,
     ],
 
     imports: [

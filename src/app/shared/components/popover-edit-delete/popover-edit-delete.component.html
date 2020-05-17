@@ -1,0 +1,4 @@
+<div *ngIf="show" class="popover-container">
+    <div (click)="editClicked.emit()">EDIT <fa-icon [icon]="faPen"></fa-icon></div>
+    <div (click)="deleteClicked.emit()">DELETE <fa-icon [icon]="faTrash"></fa-icon></div>
+</div>

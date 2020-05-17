@@ -41,23 +41,52 @@ export class AttributesCardsContainerComponent implements OnInit {
         });
     }
 
-    createAttribute() {
+    createOrUpdateAttribute() {
         if (!this.form.valid) {
             return;
         }
-        const newAttribute: Omit<AttributeModel, 'id'> = {
-            name: this.form.value.name,
-            description: this.form.value.description,
-            alterations: this.form.value.alterations,
+
+        const attribute: AttributeModel = {
+            ...this.form.value,
             isVitalitySource: this.form.value.type === 'vitality',
             isPowerSource: this.form.value.type === 'power',
         };
-        this.attributeFacade.addAttribute(newAttribute);
+
+        if (attribute.id) {
+            this.attributeFacade.updateAttribute(attribute);
+            this.snackbarService.show(`Attribute ${attribute.name} updated.`);
+        } else {
+            this.attributeFacade.addAttribute(attribute);
+            this.snackbarService.show(`Attribute ${attribute.name} created.`);
+        }
         this.hideForm();
-        this.snackbarService.show(`Attribute ${newAttribute.name} created.`);
     }
 
     hideForm() {
         this.form = null;
+    }
+
+    onEdit(attribute: AttributeModel) {
+        const alterationsControls = attribute.alterations.map(alt =>
+            this.fb.group({
+                type: alt.type,
+                property: alt.property,
+                value: alt.value,
+            })
+        );
+        this.form = this.fb.group({
+            id: this.fb.control(attribute.id),
+            name: this.fb.control(attribute.name, Validators.required),
+            description: this.fb.control(attribute.description),
+            type: this.fb.control(
+                attribute.isPowerSource ? 'power' : attribute.isVitalitySource ? 'vitality' : 'attribute'
+            ),
+            alterations: this.fb.array(alterationsControls),
+        });
+    }
+
+    onDelete(attribute: AttributeModel) {
+        this.attributeFacade.deleteAttribute(attribute);
+        this.snackbarService.show(`Attriute ${attribute.name} deleted.`, 'error');
     }
 }

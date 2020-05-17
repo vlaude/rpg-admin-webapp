@@ -4,7 +4,13 @@
         <!-- Icon -->
         <div class="icon lg">?</div>
         <!-- Name -->
-        <div class="card-title">{{ attribute.name }}</div>
+        <div class="card-title">
+            {{ attribute.name }}
+            <app-popover-edit-delete
+                (editClicked)="edit.emit()"
+                (deleteClicked)="delete.emit()"
+            ></app-popover-edit-delete>
+        </div>
         <!-- Chip -->
         <div
             class="attribute-chip lg"

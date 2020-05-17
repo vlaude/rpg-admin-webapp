@@ -34,4 +34,23 @@ export class AttributeFacade {
         };
         this.state.setAttributes([newAttribute, ...attributes]);
     }
+
+    updateAttribute(attribute: AttributeModel) {
+        const attributes = this.state.attributesValue;
+        const index = attributes.findIndex(att => att.id === attribute.id);
+        let attributeToUpdate = attributes[index];
+        attributeToUpdate = {
+            ...attributeToUpdate,
+            ...attribute,
+        };
+        attributes[index] = attributeToUpdate;
+        this.state.setAttributes(attributes);
+    }
+
+    deleteAttribute(attribute: AttributeModel) {
+        const attributes = this.state.attributesValue;
+        const index = attributes.findIndex(att => att.id === attribute.id);
+        attributes.splice(index, 1);
+        this.state.setAttributes(attributes);
+    }
 }
