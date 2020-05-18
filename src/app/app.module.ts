@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { AttributesContainerComponent } from './attributes/containers/attributes-container/attributes-container.component';
 import { AttributeCardComponent } from './attributes/components/attribute-card/attribute-card.component';
 import { DamageTypesContainerComponent } from './damage-types/containers/damage-types-container/damage-types-container.component';
 import { DamageTypeCardComponent } from './damage-types/components/damage-type-card/damage-type-card.component';
@@ -17,10 +16,7 @@ import { EquipmentPositionCardComponent } from './equipment/components/equipment
 import { EquipmentQualitiesContainerComponent } from './equipment/containers/equipment-qualities-container/equipment-qualities-container.component';
 import { EquipmentQualityCardComponent } from './equipment/components/equipment-quality-card/equipment-quality-card.component';
 import { EquipmentQualityGraphComponent } from './equipment/components/equipment-quality-graph/equipment-quality-graph.component';
-import { CreateAttributeContainerComponent } from './attributes/containers/create-attribute-container/create-attribute-container.component';
-import { AttributesCardsContainerComponent } from './attributes/containers/attributes-cards-container/attributes-cards-container.component';
-import { AttributeFormComponent } from './attributes/components/attribute-form/attribute-form.component';
-import { AlterationFormComponent } from './attributes/components/alteration-form/alteration-form.component';
+import { AttributesContainerComponent } from './attributes/containers/attributes-container/attributes-container.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from './_modal';
 import { AlterationRowComponent } from './attributes/components/alteration-row/alteration-row.component';
@@ -31,11 +27,11 @@ import { DamageTypeCardFormComponent } from './damage-types/components/damage-ty
 import { AttributeCardFormComponent } from './attributes/components/attribute-card-form/attribute-card-form.component';
 import { PopoverEditDeleteComponent } from './shared/components/popover-edit-delete/popover-edit-delete.component';
 import { NotEditingPipe } from './shared/pipes/not-editing.pipe';
+import { AlteredByRowComponent } from './damage-types/components/altered-by-row/altered-by-row.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        AttributesContainerComponent,
         AttributeCardComponent,
         DamageTypesContainerComponent,
         DamageTypeCardComponent,
@@ -47,16 +43,14 @@ import { NotEditingPipe } from './shared/pipes/not-editing.pipe';
         EquipmentQualitiesContainerComponent,
         EquipmentQualityCardComponent,
         EquipmentQualityGraphComponent,
-        CreateAttributeContainerComponent,
-        AttributesCardsContainerComponent,
-        AttributeFormComponent,
-        AlterationFormComponent,
+        AttributesContainerComponent,
         AlterationRowComponent,
         AbsPipe,
         DamageTypeCardFormComponent,
         AttributeCardFormComponent,
         PopoverEditDeleteComponent,
         NotEditingPipe,
+        AlteredByRowComponent,
     ],
 
     imports: [

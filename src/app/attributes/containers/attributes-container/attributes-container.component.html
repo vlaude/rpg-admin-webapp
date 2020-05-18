@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<div class="attributes-grid">
+    <!-- No attribute display -->
+    <p *ngIf="attributes?.length === 0 && !form">
+        You don't have attribute yet. <a (click)="showForm()">Start creating one !</a>
+    </p>
+    <!-- Attribute Form -->
+    <app-attribute-card-form
+        *ngIf="form"
+        [form]="form"
+        [attributes]="attributes"
+        [damageTypes]="damageTypes"
+        (submitClicked)="createOrUpdateAttribute()"
+        (cancelClicked)="hideForm()"
+    ></app-attribute-card-form>
+    <!-- Existing Attribute -->
+    <app-attribute-card
+        *ngFor="let attribute of attributes | notEditing: form?.value.id"
+        [attribute]="attribute"
+        (edit)="onEdit(attribute)"
+        (delete)="onDelete(attribute)"
+    ></app-attribute-card>
+</div>
+<!-- Fab button to show the form -->
+<div class="fab" (click)="showForm()" *ngIf="!form">+</div>

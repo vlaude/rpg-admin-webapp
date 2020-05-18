@@ -23,25 +23,12 @@
         <!-- Altered by -->
         <div class="altered-by-container">
             <div class="title">Altered by</div>
-            <div class="alteration" *ngFor="let alteration of damageType.alterations">
-                <div
-                    class="attribute-chip sm"
-                    [ngClass]="{
-                        'vitality-source': alteration.attribute.isVitalitySource,
-                        'power-source': alteration.attribute.isPowerSource
-                    }"
-                ></div>
-                {{ alteration.attribute.name }}
-                <span
-                    [ngClass]="{
-                        'alteration-symbol-bonus': alteration.value > 0,
-                        'alteration-symbol-malus': alteration.value < 0
-                    }"
-                ></span>
-                <span style="font-size: 1rem;">{{
-                    alteration.value > 0 ? alteration.value : alteration.value * -1
-                }}</span>
-            </div>
+            <app-altered-by-row
+                class="alteration"
+                *ngFor="let alteration of damageType.alterations"
+                [alteration]="alteration"
+                fontSize="0.9"
+            ></app-altered-by-row>
         </div>
     </div>
     <!-- content -->

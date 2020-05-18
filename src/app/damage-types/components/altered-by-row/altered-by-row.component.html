@@ -1,0 +1,13 @@
+<div [ngStyle]="{ 'font-size.rem': fontSize }">
+    <div
+        class="attribute-chip sm"
+        [ngClass]="{
+            'vitality-source': alteration.attribute.isVitalitySource,
+            'power-source': alteration.attribute.isPowerSource
+        }"
+    ></div>
+    <span>{{ alteration.attribute.name }}</span>
+    <fa-icon *ngIf="alteration.value > 0" class="bonus" [icon]="faPlus"></fa-icon>
+    <fa-icon *ngIf="alteration.value < 0" class="malus" [icon]="faMinus"></fa-icon>
+    <span>{{ alteration.value | abs }}</span>
+</div>

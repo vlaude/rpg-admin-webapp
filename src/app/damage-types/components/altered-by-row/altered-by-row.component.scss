@@ -1,0 +1,18 @@
+div {
+    display: flex;
+    align-items: center;
+
+    div.attribute-chip {
+        margin-right: 1em;
+    }
+    fa-icon {
+        margin: 0 0.5em;
+
+        &.bonus {
+            color: var(--alteration-bonus-color);
+        }
+        &.malus {
+            color: var(--alteration-malus-color);
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.attributes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1.5em;
+    grid-row-gap: 1.5em;
+
+    app-attribute-card-form {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+a {
+    font-weight: bold;
+    color: var(--link-color);
+    &:hover {
+        text-decoration: underline;
+    }
+}

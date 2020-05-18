@@ -5,7 +5,7 @@
         <div class="icon lg">?</div>
         <!-- Name -->
         <div class="card-title">
-            {{ attribute.name }}
+            <span>{{ attribute.name }}</span>
             <app-popover-edit-delete
                 (editClicked)="edit.emit()"
                 (deleteClicked)="delete.emit()"
@@ -25,9 +25,12 @@
         </div>
         <!-- Alterations -->
         <div class="alterations-container">
-            <div class="alteration" *ngFor="let alteration of attribute.alterations">
-                <app-alteration-row [alteration]="alteration" [fontSize]="0.9"></app-alteration-row>
-            </div>
+            <app-alteration-row
+                class="alteration"
+                *ngFor="let alteration of attribute.alterations"
+                [alteration]="alteration"
+                [fontSize]="0.9"
+            ></app-alteration-row>
         </div>
     </div>
     <div class="card-footer"></div>
