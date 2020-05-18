@@ -5,6 +5,14 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        .card-title {
+            position: relative;
+            span {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
         .icon {
             margin-right: 1em;
         }

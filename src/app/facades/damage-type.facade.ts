@@ -22,8 +22,10 @@ export class DamageTypeFacade {
         return this.damageTypeState.getDamageTypes$().pipe(
             map(damageTypes => {
                 return damageTypes.map(dt => {
+                    dt.attributesAffected = dt.attributesAffected.map(attAffected =>
+                        attributes.find(att => att.id === attAffected.id)
+                    );
                     dt.alterations = [];
-
                     attributes.forEach(att => {
                         att.alterations.forEach(alt => {
                             if (alt.type === 'DamageType' && alt.property === dt.name) {
@@ -59,5 +61,24 @@ export class DamageTypeFacade {
             ...damageType,
         };
         this.damageTypeState.setDamageTypes([newDamageType, ...damageTypes]);
+    }
+
+    updateDamageType(damageType: DamageTypeModel) {
+        const damageTypes = this.damageTypeState.damageTypesValue;
+        const index = damageTypes.findIndex(dt => dt.id === damageType.id);
+        let damageTypeToUpdate = damageTypes[index];
+        damageTypeToUpdate = {
+            ...damageTypeToUpdate,
+            ...damageType,
+        };
+        damageTypes[index] = damageTypeToUpdate;
+        this.damageTypeState.setDamageTypes(damageTypes);
+    }
+
+    deleteDamageType(damageType: DamageTypeModel) {
+        const damageTypes = this.damageTypeState.damageTypesValue;
+        const index = damageTypes.findIndex(dt => dt.id === damageType.id);
+        damageTypes.splice(index, 1);
+        this.damageTypeState.setDamageTypes(damageTypes);
     }
 }

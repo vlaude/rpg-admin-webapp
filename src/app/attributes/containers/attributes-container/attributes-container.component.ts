@@ -66,7 +66,10 @@ export class AttributesContainerComponent implements OnInit {
         this.form = null;
     }
 
-    onEdit(attribute: AttributeModel) {
+    /**
+     * Build the form from the existing attribute value.
+     */
+    onEditAttribute(attribute: AttributeModel) {
         const alterationsControls = attribute.alterations.map(alt =>
             this.fb.group({
                 type: alt.type,
@@ -85,7 +88,7 @@ export class AttributesContainerComponent implements OnInit {
         });
     }
 
-    onDelete(attribute: AttributeModel) {
+    onDeleteAttribute(attribute: AttributeModel) {
         this.attributeFacade.deleteAttribute(attribute);
         this.snackbarService.show(`Attriute ${attribute.name} deleted.`, 'error');
     }

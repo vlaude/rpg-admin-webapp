@@ -16,8 +16,8 @@
     <app-attribute-card
         *ngFor="let attribute of attributes | notEditing: form?.value.id"
         [attribute]="attribute"
-        (edit)="onEdit(attribute)"
-        (delete)="onDelete(attribute)"
+        (edit)="onEditAttribute(attribute)"
+        (delete)="onDeleteAttribute(attribute)"
     ></app-attribute-card>
 </div>
 <!-- Fab button to show the form -->

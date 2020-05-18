@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DamageTypeModel } from '../../models/damage-type.model';
 
 @Component({
@@ -8,6 +8,8 @@ import { DamageTypeModel } from '../../models/damage-type.model';
 })
 export class DamageTypeCardComponent implements OnInit {
     @Input() damageType: DamageTypeModel;
+    @Output() edit = new EventEmitter<void>();
+    @Output() delete = new EventEmitter<void>();
 
     constructor() {}
 

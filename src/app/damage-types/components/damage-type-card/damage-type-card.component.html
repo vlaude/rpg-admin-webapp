@@ -2,7 +2,13 @@
     <!-- Header -->
     <div class="card-header">
         <div class="icon lg">?</div>
-        <div class="card-title">{{ damageType.name }}</div>
+        <div class="card-title">
+            <span>{{ damageType.name }}</span>
+            <app-popover-edit-delete
+                (editClicked)="edit.emit()"
+                (deleteClicked)="delete.emit()"
+            ></app-popover-edit-delete>
+        </div>
     </div>
     <!-- Content -->
     <div class="card-content">

@@ -31,11 +31,10 @@ export class DamageTypesContainerComponent implements OnInit {
     ngOnInit(): void {
         this.damageTypeFacade.getDamageTypesWithAlterations$().subscribe(damageTypes => {
             this.damageTypes = damageTypes;
-            console.log(this.damageTypes);
         });
     }
 
-    async createDamageType() {
+    async createOrUpdateDamageType() {
         if (!this.form.valid) {
             return;
         }
@@ -48,12 +47,19 @@ export class DamageTypesContainerComponent implements OnInit {
                 this.attributeFacade.getAttributeById$(affect.id).pipe(take(1)).toPromise()
             )
         );
-        const newDamageType: Omit<DamageTypeModel, 'id'> = {
-            name: this.form.value.name,
+        const damageType: DamageTypeModel = {
+            ...this.form.value,
             attributesAffected,
         };
-        this.damageTypeFacade.addDamageType(newDamageType);
-        this.snackbarService.show(`Damage Type ${newDamageType.name} created.`);
+
+        if (damageType.id) {
+            this.damageTypeFacade.updateDamageType(damageType);
+            this.snackbarService.show(`Damage Type ${damageType.name} updated.`);
+        } else {
+            this.damageTypeFacade.addDamageType(damageType);
+            this.snackbarService.show(`Damage Type ${damageType.name} created.`);
+        }
+
         this.hideForm();
     }
 
@@ -70,5 +76,24 @@ export class DamageTypesContainerComponent implements OnInit {
 
     hideForm() {
         this.form = null;
+    }
+
+    /**
+     * Build the form from existing damage type value.
+     */
+    onEditDamageType(damageType: DamageTypeModel) {
+        this.attributes = this.attributeFacade.getAttributes();
+
+        const affectsControls = damageType.attributesAffected.map(att => this.fb.group({ id: att.id }));
+        this.form = this.fb.group({
+            id: this.fb.control(damageType.id),
+            name: this.fb.control(damageType.name, Validators.required),
+            affects: this.fb.array(affectsControls, Validators.required),
+        });
+    }
+
+    onDeleteDamageType(damageType: DamageTypeModel) {
+        this.damageTypeFacade.deleteDamageType(damageType);
+        this.snackbarService.show(`Damage Type ${damageType.name} deleted.`, 'error');
     }
 }
