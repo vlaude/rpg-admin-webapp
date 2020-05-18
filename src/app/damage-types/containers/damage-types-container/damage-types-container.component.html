@@ -13,7 +13,7 @@
     ></app-damage-type-card-form>
     <!-- Existing Damage Type Cards -->
     <app-damage-type-card
-        *ngFor="let damageType of damageTypes"
+        *ngFor="let damageType of damageTypes | notEditing: form?.value.id"
         [damageType]="damageType"
         (edit)="onEditDamageType(damageType)"
         (delete)="onDeleteDamageType(damageType)"
