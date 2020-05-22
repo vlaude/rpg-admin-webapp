@@ -7,11 +7,15 @@
         <div style="display: flex; align-items: center;">
             <div class="icon lg">?</div>
             <div class="card-title">
-                {{ equipmentPosition.name }} (
+                <span> {{ equipmentPosition.name }} ( </span>
                 <span style="color: var(--yankees-blue1);">{{
                     equipmentPosition.equipmentCategories?.length || 0
                 }}</span>
                 )
+                <app-popover-edit-delete
+                    (editClicked)="edit.emit()"
+                    (deleteClicked)="delete.emit()"
+                ></app-popover-edit-delete>
             </div>
         </div>
         <div

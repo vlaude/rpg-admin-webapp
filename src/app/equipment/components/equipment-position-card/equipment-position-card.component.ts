@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EquipmentPositionModel } from '../../models/equipment-position.model';
 
 @Component({
@@ -8,6 +8,8 @@ import { EquipmentPositionModel } from '../../models/equipment-position.model';
 })
 export class EquipmentPositionCardComponent implements OnInit {
     @Input() equipmentPosition: EquipmentPositionModel;
+    @Output() edit = new EventEmitter<void>();
+    @Output() delete = new EventEmitter<void>();
 
     showEquipmentCategories = false;
 

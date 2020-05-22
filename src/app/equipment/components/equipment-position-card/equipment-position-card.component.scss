@@ -7,6 +7,14 @@
         .icon.lg {
             margin-right: 1em;
         }
+        .card-title {
+            position: relative;
+            span {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
         /* Add the collapse cursor */
         .collapse-cursor::before {
             content: ' ';

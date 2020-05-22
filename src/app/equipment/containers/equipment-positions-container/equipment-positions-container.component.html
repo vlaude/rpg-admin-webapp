@@ -1,6 +1,23 @@
 <div class="equipment-positions-grid">
+    <!-- No equipment position display -->
+    <p *ngIf="equipmentPositions?.length === 0 && !form">
+        You don't have equipment position yet. <a (click)="showForm()">Start creating one !</a>
+    </p>
+
+    <!-- Equipment Position Form -->
+    <app-equipment-position-card-form
+        *ngIf="form"
+        [form]="form"
+        (submitted)="createOrUpdateEquipmentPosition()"
+        (cancelClicked)="hideForm()"
+    ></app-equipment-position-card-form>
+    <!-- Existing Equipment Position -->
     <app-equipment-position-card
         *ngFor="let equipmentPosition of equipmentPositions"
         [equipmentPosition]="equipmentPosition"
+        (edit)="onEditEquipmentPosition(equipmentPosition)"
+        (delete)="onDeleteEquipmentPosition(equipmentPosition)"
     ></app-equipment-position-card>
 </div>
+<!-- Fab button to show the form -->
+<div class="fab" (click)="showForm()" *ngIf="!form">+</div>

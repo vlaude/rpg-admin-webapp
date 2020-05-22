@@ -28,6 +28,7 @@ import { AttributeCardFormComponent } from './attributes/components/attribute-ca
 import { PopoverEditDeleteComponent } from './shared/components/popover-edit-delete/popover-edit-delete.component';
 import { NotEditingPipe } from './shared/pipes/not-editing.pipe';
 import { AlteredByRowComponent } from './damage-types/components/altered-by-row/altered-by-row.component';
+import { EquipmentPositionCardFormComponent } from './equipment/components/equipment-position-card-form/equipment-position-card-form.component';
 
 @NgModule({
     declarations: [
@@ -51,6 +52,7 @@ import { AlteredByRowComponent } from './damage-types/components/altered-by-row/
         PopoverEditDeleteComponent,
         NotEditingPipe,
         AlteredByRowComponent,
+        EquipmentPositionCardFormComponent,
     ],
 
     imports: [
