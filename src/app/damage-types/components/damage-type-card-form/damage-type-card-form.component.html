@@ -35,8 +35,5 @@
         <!-- content -->
     </form>
     <!-- Actions -->
-    <div class="card-actions">
-        <button type="button" class="success" [disabled]="!form.valid" (click)="submit()">Submit</button>
-        <button type="button" (click)="cancel()">Cancel</button>
-    </div>
+    <app-card-actions [form]="form" (submitClicked)="submit()" (cancelClicked)="cancel()"></app-card-actions>
 </div>

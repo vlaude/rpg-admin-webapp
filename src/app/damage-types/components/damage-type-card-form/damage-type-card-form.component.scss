@@ -37,13 +37,4 @@
             }
         }
     }
-    .card-actions {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding: 1em;
-        button:last-child {
-            margin-left: 1em;
-        }
-    }
 }

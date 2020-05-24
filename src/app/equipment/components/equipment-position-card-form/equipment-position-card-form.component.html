@@ -6,9 +6,6 @@
             <input placeholder="Name" formControlName="name" autofocus />
         </div>
         <!-- Action -->
-        <div class="card-actions">
-            <button type="submit" class="success" [disabled]="!form.valid">Submit</button>
-            <button type="button" (click)="cancelClicked.emit()">Cancel</button>
-        </div>
+        <app-card-actions [form]="form" (cancelClicked)="cancelClicked.emit()"></app-card-actions>
     </form>
 </div>

@@ -5,13 +5,3 @@
         margin-right: 1em;
     }
 }
-
-.card-actions {
-    border-top: 2px solid var(--card-divider-color);
-    display: flex;
-    justify-content: flex-end;
-    padding: 1em;
-    button:last-child {
-        margin-left: 1em;
-    }
-}
