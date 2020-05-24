@@ -1,5 +1,11 @@
 <div class="equipment-qualities-grid">
     <div class="equipment-qualities-cards">
+        <app-equipment-quality-card-form
+            *ngIf="form"
+            [form]="form"
+            (submitted)="createOrUpdateEquipmentQuality()"
+            (cancelClicked)="hideForm()"
+        ></app-equipment-quality-card-form>
         <app-equipment-quality-card
             *ngFor="let equipmentQuality of equipmentQualities"
             [equipmentQuality]="equipmentQuality"
@@ -9,3 +15,5 @@
     </div>
     <app-equipment-quality-graph [equipmentQuality]="activeEquipmentQuality"></app-equipment-quality-graph>
 </div>
+<!-- Fab button to show the form -->
+<div class="fab" (click)="showForm()" *ngIf="!form">+</div>

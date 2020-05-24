@@ -1,0 +1,11 @@
+.controls-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    .color-picker-input {
+        width: 1em;
+        height: 1em;
+        border-radius: 50px;
+        margin-right: 0.5em;
+    }
+}

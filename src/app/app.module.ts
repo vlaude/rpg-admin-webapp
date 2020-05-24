@@ -30,6 +30,8 @@ import { NotEditingPipe } from './shared/pipes/not-editing.pipe';
 import { AlteredByRowComponent } from './damage-types/components/altered-by-row/altered-by-row.component';
 import { EquipmentPositionCardFormComponent } from './equipment/components/equipment-position-card-form/equipment-position-card-form.component';
 import { CardActionsComponent } from './shared/components/card-actions/card-actions.component';
+import { EquipmentQualityCardFormComponent } from './equipment/components/equipment-quality-card-form/equipment-quality-card-form.component';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
     declarations: [
@@ -55,6 +57,7 @@ import { CardActionsComponent } from './shared/components/card-actions/card-acti
         AlteredByRowComponent,
         EquipmentPositionCardFormComponent,
         CardActionsComponent,
+        EquipmentQualityCardFormComponent,
     ],
 
     imports: [
@@ -66,6 +69,7 @@ import { CardActionsComponent } from './shared/components/card-actions/card-acti
         ReactiveFormsModule,
         ModalModule,
         FontAwesomeModule,
+        ColorPickerModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

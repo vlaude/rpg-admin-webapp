@@ -1,0 +1,9 @@
+<div class="card">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <div class="controls-container">
+            <input class="color-picker-input" [(colorPicker)]="color" [style.background]="color" />
+            <input placeholder="Name" formControlName="name" autofocus />
+        </div>
+        <app-card-actions [form]="form" (cancelClicked)="cancelClicked.emit()"></app-card-actions>
+    </form>
+</div>

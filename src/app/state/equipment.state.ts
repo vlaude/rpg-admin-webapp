@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { EquipmentPositionModel } from '../equipment/models/equipment-position.model';
+import { EquipmentQualityModel } from '../equipment/models/equipment-quality.model';
 
 @Injectable({
     providedIn: 'root',
 })
 export class EquipmentState {
     equipmentPositions$: BehaviorSubject<EquipmentPositionModel[]>;
+    equipmentQualities$: BehaviorSubject<EquipmentQualityModel[]>;
 
     constructor() {
         this.equipmentPositions$ = new BehaviorSubject<EquipmentPositionModel[]>(
             JSON.parse(sessionStorage.getItem('equipmentPositions')) || []
+        );
+        this.equipmentQualities$ = new BehaviorSubject<EquipmentQualityModel[]>(
+            JSON.parse(sessionStorage.getItem('equipmentsQualities')) || []
         );
     }
 
@@ -25,5 +30,18 @@ export class EquipmentState {
     setEquipmentPositions(equipmentPositions: EquipmentPositionModel[]): void {
         this.equipmentPositions$.next(equipmentPositions);
         sessionStorage.setItem('equipmentPositions', JSON.stringify(equipmentPositions));
+    }
+
+    getEquipmentQualities$(): Observable<EquipmentQualityModel[]> {
+        return this.equipmentQualities$.asObservable();
+    }
+
+    get equipmentQualitiesValue(): EquipmentQualityModel[] {
+        return this.equipmentQualities$.value;
+    }
+
+    setEquipmentQualities(equipmentQualities: EquipmentQualityModel[]): void {
+        this.equipmentQualities$.next(equipmentQualities);
+        sessionStorage.setItem('equipmentQualities', JSON.stringify(equipmentQualities));
     }
 }
