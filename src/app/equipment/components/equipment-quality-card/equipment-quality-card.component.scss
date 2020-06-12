@@ -6,7 +6,7 @@
     flex-direction: row;
     align-items: center;
 
-    cursor: pointer;
+    //cursor: pointer;
     .quality-chip {
         width: 2em;
         height: 2em;
@@ -14,10 +14,16 @@
         border-radius: 25px;
         margin-right: 0.5em;
     }
+    .quality-name {
+        position: relative;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     &.active {
         border: 1px solid var(--yankees-blue1);
     }
-    &:hover {
-        background: var(--yankees-blue6);
-    }
+    //&:hover {
+    //    background: var(--yankees-blue6);
+    //}
 }

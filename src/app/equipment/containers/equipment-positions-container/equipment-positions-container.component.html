@@ -13,7 +13,7 @@
     ></app-equipment-position-card-form>
     <!-- Existing Equipment Position -->
     <app-equipment-position-card
-        *ngFor="let equipmentPosition of equipmentPositions"
+        *ngFor="let equipmentPosition of equipmentPositions | notEditing: form?.value.id"
         [equipmentPosition]="equipmentPosition"
         (edit)="onEditEquipmentPosition(equipmentPosition)"
         (delete)="onDeleteEquipmentPosition(equipmentPosition)"

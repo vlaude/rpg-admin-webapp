@@ -66,4 +66,23 @@ export class EquipmentFacade {
         };
         this.state.setEquipmentQualities([newEquipmentQuality, ...equipmentQualities]);
     }
+
+    updateEquipmentQuality(equipmentQuality: EquipmentQualityModel) {
+        const equipmentQualities = this.state.equipmentQualitiesValue;
+        const index = equipmentQualities.findIndex(eq => eq.id === equipmentQuality.id);
+        let equipmentQualityToUpdate = equipmentQualities[index];
+        equipmentQualityToUpdate = {
+            ...equipmentQualityToUpdate,
+            ...equipmentQuality,
+        };
+        equipmentQualities[index] = equipmentQualityToUpdate;
+        this.state.setEquipmentQualities(equipmentQualities);
+    }
+
+    deleteEquipmentQuality(equipmentQuality: EquipmentQualityModel) {
+        const equipmentQualities = this.state.equipmentQualitiesValue;
+        const index = equipmentQualities.findIndex(eq => eq.id === equipmentQuality.id);
+        equipmentQualities.splice(index, 1);
+        this.state.setEquipmentQualities(equipmentQualities);
+    }
 }

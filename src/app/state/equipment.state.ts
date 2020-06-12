@@ -12,10 +12,10 @@ export class EquipmentState {
 
     constructor() {
         this.equipmentPositions$ = new BehaviorSubject<EquipmentPositionModel[]>(
-            JSON.parse(sessionStorage.getItem('equipmentPositions')) || []
+            JSON.parse(localStorage.getItem('equipmentPositions')) || []
         );
         this.equipmentQualities$ = new BehaviorSubject<EquipmentQualityModel[]>(
-            JSON.parse(sessionStorage.getItem('equipmentsQualities')) || []
+            JSON.parse(localStorage.getItem('equipmentQualities')) || []
         );
     }
 
@@ -29,7 +29,7 @@ export class EquipmentState {
 
     setEquipmentPositions(equipmentPositions: EquipmentPositionModel[]): void {
         this.equipmentPositions$.next(equipmentPositions);
-        sessionStorage.setItem('equipmentPositions', JSON.stringify(equipmentPositions));
+        localStorage.setItem('equipmentPositions', JSON.stringify(equipmentPositions));
     }
 
     getEquipmentQualities$(): Observable<EquipmentQualityModel[]> {
@@ -42,6 +42,6 @@ export class EquipmentState {
 
     setEquipmentQualities(equipmentQualities: EquipmentQualityModel[]): void {
         this.equipmentQualities$.next(equipmentQualities);
-        sessionStorage.setItem('equipmentQualities', JSON.stringify(equipmentQualities));
+        localStorage.setItem('equipmentQualities', JSON.stringify(equipmentQualities));
     }
 }

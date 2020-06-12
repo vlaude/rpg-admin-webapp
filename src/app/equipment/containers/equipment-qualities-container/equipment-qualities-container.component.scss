@@ -19,3 +19,11 @@
         flex-grow: 2;
     }
 }
+
+a {
+    font-weight: bold;
+    color: var(--link-color);
+    &:hover {
+        text-decoration: underline;
+    }
+}

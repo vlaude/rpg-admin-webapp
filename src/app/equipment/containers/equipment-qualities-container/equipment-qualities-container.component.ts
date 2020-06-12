@@ -40,7 +40,7 @@ export class EquipmentQualitiesContainerComponent implements OnInit {
     showForm() {
         this.form = this.fb.group({
             name: this.fb.control('', Validators.required),
-            color: this.fb.control('ffffff', Validators.required),
+            color: this.fb.control('#ffffff', Validators.required),
         });
     }
 
@@ -54,6 +54,8 @@ export class EquipmentQualitiesContainerComponent implements OnInit {
         };
 
         if (equipmentQuality.id) {
+            this.equipmentFacade.updateEquipmentQuality(equipmentQuality);
+            this.snackbarService.show(`Equipment Quality ${equipmentQuality.name} updated.`);
         } else {
             this.equipmentFacade.addEquipmentQuality(equipmentQuality);
             this.snackbarService.show(`Equipment Quality ${equipmentQuality.name} created.`);
@@ -63,5 +65,18 @@ export class EquipmentQualitiesContainerComponent implements OnInit {
 
     hideForm() {
         this.form = null;
+    }
+
+    onEditEquipmentQuality(equipmentQuality: EquipmentQualityModel) {
+        this.form = this.fb.group({
+            id: this.fb.control(equipmentQuality.id),
+            name: this.fb.control(equipmentQuality.name, Validators.required),
+            color: this.fb.control(equipmentQuality.color, Validators.required),
+        });
+    }
+
+    onDeleteEquipmentQuality(equipmentQuality: EquipmentQualityModel) {
+        this.equipmentFacade.deleteEquipmentQuality(equipmentQuality);
+        this.snackbarService.show(`Equipment Quality ${equipmentQuality.name} deleted.`, 'error');
     }
 }

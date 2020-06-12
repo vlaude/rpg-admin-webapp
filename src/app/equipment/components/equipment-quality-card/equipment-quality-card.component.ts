@@ -10,6 +10,8 @@ export class EquipmentQualityCardComponent implements OnInit {
     @Input() equipmentQuality: EquipmentQualityModel;
     @Input() active: boolean;
     @Output() clicked = new EventEmitter<string>();
+    @Output() edit = new EventEmitter<void>();
+    @Output() delete = new EventEmitter<void>();
 
     constructor() {}
 

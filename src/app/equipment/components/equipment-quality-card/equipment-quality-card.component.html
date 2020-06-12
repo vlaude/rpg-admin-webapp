@@ -1,4 +1,7 @@
 <div class="card" (click)="fireClicked()" [ngClass]="{ active: active }">
     <div class="quality-chip" [ngStyle]="{ background: equipmentQuality.color }"></div>
-    <span>{{ equipmentQuality.name }}</span>
+    <span class="quality-name"
+        >{{ equipmentQuality.name }}
+        <app-popover-edit-delete (editClicked)="edit.emit()" (deleteClicked)="delete.emit()"></app-popover-edit-delete
+    ></span>
 </div>

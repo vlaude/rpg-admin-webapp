@@ -15,7 +15,9 @@ export class EquipmentQualityCardFormComponent implements OnInit {
 
     constructor() {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.color = this.form.value?.color ? this.form.value.color : this.color;
+    }
 
     submit() {
         this.form.value.color = this.color;

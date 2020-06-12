@@ -1,5 +1,9 @@
 <div class="equipment-qualities-grid">
     <div class="equipment-qualities-cards">
+        <!-- No equipment position display -->
+        <p *ngIf="equipmentQualities?.length === 0 && !form">
+            You don't have equipment qualities yet. <a (click)="showForm()">Start creating one !</a>
+        </p>
         <app-equipment-quality-card-form
             *ngIf="form"
             [form]="form"
@@ -7,13 +11,15 @@
             (cancelClicked)="hideForm()"
         ></app-equipment-quality-card-form>
         <app-equipment-quality-card
-            *ngFor="let equipmentQuality of equipmentQualities"
+            *ngFor="let equipmentQuality of equipmentQualities | notEditing: form?.value.id"
             [equipmentQuality]="equipmentQuality"
-            [active]="equipmentQualityCardActive === equipmentQuality.id"
             (clicked)="handleEquipmentQualityCardClicked($event)"
+            (edit)="onEditEquipmentQuality(equipmentQuality)"
+            (delete)="onDeleteEquipmentQuality(equipmentQuality)"
         ></app-equipment-quality-card>
+        <!-- [active]="equipmentQualityCardActive === equipmentQuality.id" -->
     </div>
-    <app-equipment-quality-graph [equipmentQuality]="activeEquipmentQuality"></app-equipment-quality-graph>
+    <!--    <app-equipment-quality-graph [equipmentQuality]="activeEquipmentQuality"></app-equipment-quality-graph>-->
 </div>
 <!-- Fab button to show the form -->
 <div class="fab" (click)="showForm()" *ngIf="!form">+</div>
